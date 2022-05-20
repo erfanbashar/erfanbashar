@@ -16,7 +16,7 @@
     <script src="js/featherIcon.js"></script>
 </head>
 
-<body>
+<body onload="onload()">
     <section>
         <!-- MOBILE NAVIGATION -->
         <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
@@ -35,22 +35,22 @@
             <img src="7655.jpg" class="w3-circle w3-border w3-border-sand" style="border-width: 3px !important;" />
             <!--SCIAL NETWORK BUTTONS-->
             <div class="links w3-margin-top w3-padding-small">
-                <a class="icon-link w3-text-sand w3-hover-text-amber" href="#facebook" target="_blank">
+                <a class="icon-link w3-text-sand w3-hover-text-amber" id="linkedin" onclick="getLinkedin()" target="_blank">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a class="icon-link w3-text-sand w3-hover-text-amber" id="github" onclick="getGithub()" target="_blank">
+                    <i data-feather="github"></i>
+                </a>
+                <a class="icon-link w3-text-sand w3-hover-text-amber" id="facebook" onclick="getFacebook()" target="_blank">
                     <i data-feather="facebook"></i>
                 </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" href="#instagram" target="_blank">
+                <a class="icon-link w3-text-sand w3-hover-text-amber" id="instagram" onclick="getInstagram()" target="_blank">
                     <i data-feather="instagram"></i>
-                </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" href="#twitter" target="_blank">
-                    <i data-feather="twitter"></i>
-                </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" href="#linkedin" target="_blank">
-                    <i data-feather="linkedin"></i>
                 </a>
             </div>
             <!--CV DOWNLOAD BUTTON-->
             <div class="w3-container w3-padding-16">
-                <a href="./portfolio.pdf" class="w3-amber w3-hover-amber w3-button w3-round-small w3-hover-deep-orange w3-padding-large" target="_blank" download="portfolio.pdf">
+                <a id="cv" onclick="getCv()" class="w3-amber w3-hover-amber w3-button w3-round-small w3-hover-deep-orange w3-padding-large" target="_blank" download="Erfan Bashar CV.pdf">
                     <i data-feather="arrow-down" style="vertical-align: -0.35em;"></i>
                     <span class="w3-margin-left download-text">DOWNLOAD CV</span>
                 </a>
@@ -221,7 +221,6 @@
                 <div id="contact" class="w3-container w3-margin-top-10-percent w3-cursive">
                     <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">CONTACT DETAILS</h3>
                         <div class="w3-margin-top-2" style="font-weight: 500;">
-                            <p>Name: Erfan Bashar</p>
                             <p>Adress: House 6, Road 5, Dhanmondi, Dhaka-1205, Bangladesh</p>
                             <p>Phone number: +8801700714540</p>
                             <p>E-mail: erfan.bashar.13@gmail.com</p>
