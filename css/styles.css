@@ -126,6 +126,10 @@ ul li {
     padding: 15px;
 }
 
+#skillSpan {
+    font-style: italic;
+}
+
 
 /*Media queries*/
 
