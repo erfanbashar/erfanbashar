@@ -126,8 +126,57 @@ ul li {
     padding: 15px;
 }
 
+#skillSpan {
+    font-style: italic;
+}
+
+#container {
+    text-align: left;
+}
+
+#text {
+    display: inline-block;
+    /* vertical-align: left; */
+    color: orange;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+#cursor {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 20px;
+    background-color: orange;
+    animation: blink .75s step-end infinite;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 
 /*Media queries*/
+
+@keyframes blink {
+    from,
+    to {
+        background-color: transparent
+    }
+    50% {
+        background-color: orange;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     .home {
