@@ -17,7 +17,7 @@
     <script src="js/featherIcon.js"></script>
 </head>
 
-<body onload="onload()">
+<body onload="onLoad()">
     <section>
         <!-- MOBILE NAVIGATION -->
         <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
@@ -34,7 +34,7 @@
         <section class="image-section w3-quarter w3-fixed w3-padding-small">
             <!--IMAGE/AVATAR-->
             <img src="7655.jpg" class="w3-circle w3-border w3-border-sand" style="border-width: 3px !important;" />
-            <!--SCIAL NETWORK BUTTONS-->
+            <!--SOCIAL NETWORK BUTTONS-->
             <div class="links w3-margin-top w3-padding-small">
                 <a class="icon-link w3-text-sand w3-hover-text-amber" id="linkedin" onclick="getLinkedin()" target="_blank">
                     <i data-feather="linkedin"></i>
@@ -70,179 +70,112 @@
             <div class="content-container w3-margin-top-2">
                 <!--HOME SECTION-->
                 <div id="home" class="home w3-container w3-margin-top-4 w3-cursive">
-                    <p style="font-style: italic; font-size:xx-large;">A M A Erfan Bashar</p>
-                    <p>CBS Developer & FinTech Solution Provider|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Tech & Football|</p>
+                    <div id="container"></div>
                 </div>
-                <hr>
 
                 <!--ABOUT SECTION-->
-                <div id="about" class="w3-container w3-margin-top-10-percent w3-cursive w3-large">
-                    <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">ABOUT</h2>
-                    <p class="w3-margin-top-2" style="text-align: justify;">
-                        A Focused and quick-learning individual with more than 4 years of experience in development, customization, and support FinTech Enterprise Applications. A CBS application solution provider with expertise in working with Java web-based technologies and
-                        enterprise-level DB configuration, along with managing several technology projects in agile environments. Confident communicator and strategic thinker to build software customizable to meet organizational needs and highlight core
-                        competencies.
-                    </p>
-                </div>
+                <div id="about" class="w3-container w3-margin-top-10-percent w3-cursive w3-large"></div>
                 <hr>
 
                 <!--PORTFOLIO-->
-                <div id="portfolio" class="w3-container w3-margin-top-10-percent w3-cursive">
-                    <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">PORTFOLIO</h2>
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
+                <div id="portfolio" class="w3-container w3-margin-top-10-percent w3-cursive reveal"></div>
+                <hr>
 
-                        <!--EMPLOYMENT HISTORY SECTION-->
-                        <h3 class="w3-border-amber">EMPLOYMENT HISTORY</h3>
-                        <div class="">
-                            <h4>Mutual Trust Bank Limited</h4>
-                            <h4>Senior Officer, Digital Banking Division</h4>
-                            <p style="text-align: right;">July 2021 - Present</p>
-                            <ul class="w3-ul" style="font-weight: 500;">
-                                <li>Managing projects throughout the entire execution period to ensure success in terms of scope, budget, and timeline.</li>
-                                <li>Working as the “missing middle” between business and CBS application to integrate systems for achieving efficient solutions.</li>
-                                <li>Developing and reviewing comprehensive project plans to bundle requirements with goals, and coordinating various stakeholders during all project phases, from initial development through implementation.</li>
-                                <li>Monitoring project progress continuously and making detailed scheduled reports on milestones and deliverables.</li>
-                                <li>Communicating proactively with all involved personnel to encourage, identify problems, create solutions, and implement efficiency improvements.</li>
-                                <li>Analysing economics of project plans and providing actionable feedback relating to cost-benefit and return-on-investment standards.</li>
-                                <li>Oversee acquisition of resources and materials as needed before and during projects by talking with customers, team members, managers, and in-house accountants and negotiating price and payment agreements with vendors.</li>
-                            </ul>
-                        </div>
-                        <div class="">
-                            <h4>BRAC Bank Limited</h4>
-                            <h4>Senior Officer, Core Banking Application, Technology Division</h4>
-                            <p style="text-align: right;">May 2019 - June 2021</p>
-                            <h4>Officer, Core Banking Application, Technology Division</h4>
-                            <p style="text-align: right;">August 2017 - April 2019</p>
-                            <ul class="w3-ul" style="font-weight: 500;">
-                                <li>Enhanced existing modules and develop new features to provide critical resolution, and analysed, modified, and supported for RCA and Permanent Resolution of the Core Banking Application.</li>
-                                <li>Analysed business requirements, produced system design to support upgrades and ongoing maintenance, defined problem-solving procedures through interaction with internal customers (up to L2) to prepare, compare and recommend
-                                    alternate solutions.</li>
-                                <li>Wrote, tested, and debugged SQL/PL-SQL codes, stored procedures, views and functions, and other ETL processes to ensure optimal performance, reliability, and integrity.</li>
-                                <li>Supported business data analysis and developed customized reports for ad-hoc data requests.</li>
-                                <li>Worked in multiple projects with project managers, businesses owners, analyst teams, and clients for prototyped end-to-end analysis, implemented system validation, gathered BRS and SRS, UAT, and Post Production verification.</li>
-                                <li>Documented and reviewed code, provided reports, and peer feedback.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <!--SKILLS SECTION-->
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
-                        <h3 class="w3-border-amber">SKILLS & TOOLS</h3>
-                        <!--TECHNICAL SKILLS-->
-                        <h4>Technical skills</h4>
-                        <ul class="w3-ul" style="font-weight: 500;">
-                            <li><span style="font-style: italic;">Programming Languages:</span> Java, SQL, PL/SQL, JS, Shell Script</li>
-                            <li><span style="font-style: italic;">Web Design:</span> HTML5, CSS3, Bootstrap</li>
-                            <li><span style="font-style: italic;">Web Development Framework:</span> SpringBoot, Hibernate, Lombok</li>
-                            <li><span style="font-style: italic;">DBMS:</span> Oracle DB, MySQL</li>
-                            <li><span style="font-style: italic;">API Integration & Testing:</span> REST, Postman, SoapUI</li>
-                            <li><span style="font-style: italic;">Technical Writing & Documentation:</span> Test Cases, BRD, SRS</li>
-                            <li><span style="font-style: italic;">Technical Testing:</span> UI/UX Test, Patch Service Pack Testing, UAT</li>
-                            <li><span style="font-style: italic;">VCS & Code Repo:</span> Git, GitHub</li>
-                            <li><span style="font-style: italic;">IT Issue & Task Management:</span> Microsoft SCSM</li>
-                        </ul>
-                    </div>
-                    <hr>
-
-                    <!---CERTIFICATION & TRAINING SECTION-->
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
-                        <h3 class="w3-border-amber">CERTIFICATION & TRAINING</h3>
-                        <h4>Oracle Certified SQL Developer</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Certified by Oracle University</li>
-                        </ul>
-                        <h4>Java Enterprise Edition with Spring Framework</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Trained from IBCS-PRIMAX Software (Bangladesh) Limited</li>
-                        </ul>
-                        <h4>Oracle Certified Java Associate</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Trained from IBCS-PRIMAX Software (Bangladesh) Limited</li>
-                    </div>
-                    <hr>
-
-                    <!---EDUCATION SECTION-->
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
-                        <h3 class="w3-border-amber">MY EDUCATION</h3>
-                        <h4>Master of Business Administration</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Department of Marketing, University of Dhaka</li>
-                            <li>April 2017 - December 2020</li>
-                        </ul>
-                        <h4>Bachelor in Science</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Department of Computer Science & Engineering, University of Dhaka</li>
-                            <li>January 2011 - December 2014</li>
-                        </ul>
-                        <h4>Higher Secondary School Certificate</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Notre Dame College</li>
-                            <li>2010</li>
-                        </ul>
-                        <h4>Secondary School Certificate</h4>
-                        <ul class="w3-ul" style="font-weight: 600;">
-                            <li>Udayan School & College</li>
-                            <li>2008</li>
-                        </ul>
-                    </div>
-                    <hr>
-
-                    <!--INTERESTS SECTION-->
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
-                        <h3 class="w3-border-amber">HOBBIES AND INTERESTS</h3>
-                        <ul class="w3-ul" style="font-weight: 500;">
-                            <li>Technology & Football make me happy</li>
-                            <li>I like to travel any place around a sea</li>
-                        </ul>
-                    </div>
-                    <hr>
-
-                    <!--REFERENCE SECTION-->
-                    <div class="w3-container w3-margin-top-2 w3-cursive">
-                        <h3 class="w3-border-amber">REFERENCES</h3>
-<!--                         <div class="row">
-                            <div class="column">
-                                <h4>Uttam Adhikari</h4>
-                                <ul class="w3-ul" style="font-weight: 500; font-size: medium;">
-                                    <li>Department Head</li>
-                                    <li>Core Banking Application</li>
-                                    <li>BRAC Bank Limited, Dhaka, Bangladesh</li>
-                                    <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801713493985</li>
-                                    <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> uttam.adhikari@bracbank.com</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <h4>Shohag Sarker</h4>
-                                <ul class="w3-ul" style="font-weight: 500; font-size: medium;">
-                                    <li>Senior Manager</li>
-                                    <li>Core Banking Application</li>
-                                    <li>BRAC Bank Limited, Dhaka, Bangladesh</li>
-                                    <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801713493987</li>
-                                    <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> shohag.sarker@bracbank.com</li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <h4>Sharif Ahmed</h4>
-                        <ul class="w3-ul" style="font-weight: 500; font-size: large;">
-                            <li>Head of Technology Project & Core Banking System, Mutual Trust Bank Limited, Dhaka, Bangladesh</li>
-                            <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801755632800</li>
-                            <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> ahmed.sharif@mutualtrustbank.com</li>
-                        </ul>
-                        <h4>Uttam Adhikari</h4>
-                        <ul class="w3-ul" style="font-weight: 500; font-size: large;">
-                            <li>Head of Core Banking Application, BRAC Bank Limited, Dhaka, Bangladesh</li>
-                            <li>BRAC Bank Limited, Dhaka, Bangladesh</li>
-                            <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801713493985</li>
-                            <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> uttam.adhikari@bracbank.com</li>
-                        </ul>
-                    </div>
-                    <hr>
+                <!--SKILLS SECTION-->
+                <div id="skills" class="w3-container w3-margin-top-2 w3-cursive reveal">
+                    <h3 class="w3-border-amber">SKILLS & TOOLS</h3>
+                    <!--TECHNICAL SKILLS-->
+                    <h4>Technical skills</h4>
+                    <ul class="w3-ul" style="font-weight: 500;">
+                        <li><span style="font-style: italic;">Programming Languages:</span> Java, SQL, PL/SQL, JS, Shell Script</li>
+                        <li><span style="font-style: italic;">Web Design:</span> HTML5, CSS3, Bootstrap</li>
+                        <li><span style="font-style: italic;">Web Development Framework:</span> SpringBoot, Hibernate, Lombok</li>
+                        <li><span style="font-style: italic;">DBMS:</span> Oracle DB, MySQL</li>
+                        <li><span style="font-style: italic;">API Integration & Testing:</span> REST, Postman, SoapUI</li>
+                        <li><span style="font-style: italic;">Technical Writing & Documentation:</span> Test Cases, BRD, SRS</li>
+                        <li><span style="font-style: italic;">Technical Testing:</span> UI/UX Test, Patch Service Pack Testing, UAT</li>
+                        <li><span style="font-style: italic;">VCS & Code Repo:</span> Git, GitHub</li>
+                        <li><span style="font-style: italic;">IT Issue & Task Management:</span> Microsoft SCSM</li>
+                    </ul>
                 </div>
+                <hr>
 
+                <!---CERTIFICATION & TRAINING SECTION-->
+                <div class="w3-container w3-margin-top-2 w3-cursive reveal">
+                    <h3 class="w3-border-amber">CERTIFICATION & TRAINING</h3>
+                    <h4>Oracle Certified SQL Developer</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Certified by Oracle University</li>
+                    </ul>
+                    <h4>Java Enterprise Edition with Spring Framework</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Trained from IBCS-PRIMAX Software (Bangladesh) Limited</li>
+                    </ul>
+                    <h4>Oracle Certified Java Associate</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Trained from IBCS-PRIMAX Software (Bangladesh) Limited</li>
+                </div>
+                <hr>
+
+                <!---EDUCATION SECTION-->
+                <div class="w3-container w3-margin-top-2 w3-cursive reveal">
+                    <h3 class="w3-border-amber">MY EDUCATION</h3>
+                    <h4>Master of Business Administration</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Department of Marketing, University of Dhaka</li>
+                        <li>April 2017 - December 2020</li>
+                    </ul>
+                    <h4>Bachelor in Science</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Department of Computer Science & Engineering, University of Dhaka</li>
+                        <li>January 2011 - December 2014</li>
+                    </ul>
+                    <h4>Higher Secondary School Certificate</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Notre Dame College</li>
+                        <li>2010</li>
+                    </ul>
+                    <h4>Secondary School Certificate</h4>
+                    <ul class="w3-ul" style="font-weight: 600;">
+                        <li>Udayan School & College</li>
+                        <li>2008</li>
+                    </ul>
+                </div>
+                <hr>
+
+                <!--INTERESTS SECTION-->
+                <div class="w3-container w3-margin-top-2 w3-cursive reveal">
+                    <h3 class="w3-border-amber">HOBBIES AND INTERESTS</h3>
+                    <ul class="w3-ul" style="font-weight: 500;">
+                        <li>Technology & Football make me happy</li>
+                        <li>I like to travel any place around a sea</li>
+                    </ul>
+                </div>
+                <hr>
+
+                <!--REFERENCE SECTION-->
+                <div class="w3-container w3-margin-top-2 w3-cursive reveal">
+                    <h3 class="w3-border-amber">REFERENCES</h3>
+
+                    <h4>Sharif Ahmed</h4>
+                    <ul class="w3-ul" style="font-weight: 500; font-size: large;">
+                        <li>Head of Technology Project & Core Banking System, Mutual Trust Bank Limited, Dhaka, Bangladesh</li>
+                        <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801755632800</li>
+                        <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> ahmed.sharif@mutualtrustbank.com</li>
+                    </ul>
+                    <h4>Uttam Adhikari</h4>
+                    <ul class="w3-ul" style="font-weight: 500; font-size: large;">
+                        <li>Head of Core Banking Application, BRAC Bank Limited, Dhaka, Bangladesh</li>
+                        <li>BRAC Bank Limited, Dhaka, Bangladesh</li>
+                        <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801713493985</li>
+                        <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> uttam.adhikari@bracbank.com</li>
+                    </ul>
+
+                </div>
+                <hr>
 
                 <!--CONTACT SECTION-->
-                <div id="contact" class="w3-container w3-margin-top-10-percent w3-cursive">
+                <div id="contact" class="w3-container w3-margin-top-10-percent w3-cursive reveal">
                     <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">CONTACT DETAILS</h3>
                         <div class="w3-margin-top-2" style="font-weight: 500;">
                             <p>Adress: House 6, Road 5, Dhanmondi, Dhaka-1205, Bangladesh</p>
@@ -250,15 +183,16 @@
                             <p>E-mail: erfan.bashar.13@gmail.com</p>
                         </div>
                 </div>
+            </div>
 
-                <!--FOOTER-->
-                <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-                <footer class="w3-container w3-border-top w3-center w3-margin-top-3">
-                    <p>© 2022 - Erfan Bashar</p>
-                    <!-- End footer -->
-                </footer>
+            <!--FOOTER-->
+            <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+            <footer class="w3-container w3-border-top w3-center w3-margin-top-3">
+                <p>© 2022 - Erfan Bashar</p>
+                <!-- End footer -->
+            </footer>
 
-                <!--END OF CV SECTION-->
+            <!--END OF CV SECTION-->
         </section>
     </section>
     <script>
