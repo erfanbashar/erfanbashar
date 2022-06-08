@@ -22,10 +22,9 @@ function onLoad() {
 
 function loadText() {
     loadName();
-    // loadHomeText();
     loadAboutText();
     loadPortfolio();
-    // loadSkills();
+    loadCertificates();
 }
 
 function loadName() {
@@ -37,6 +36,36 @@ function loadName() {
     document.querySelector("#home").appendChild(nameText);
 
     loadHomeText();
+}
+
+function loadAboutText() {
+    let aboutText = document.createElement("p");
+    aboutText.id = "aboutText";
+    aboutText.style.textAlign = "justify";
+    aboutText.className = "w3-margin-top-2";
+    aboutText.textContent = "A Focused and quick-learning individual with more than 4 years of experience in development, customization, and support FinTech Enterprise Applications. A CBS application solution provider with expertise in working with Java web-based technologies and enterprise-level DB configuration, along with managing several technology projects in agile environments. Confident communicator and strategic thinker to build software customizable to meet organizational needs and highlight core competencies.";
+
+    let aboutHeader = document.createElement("h2");
+    aboutHeader.className = "w3-border-bottom w3-border-amber";
+    aboutHeader.setAttribute('style', 'border-width: 3px !important');
+    aboutHeader.textContent = "ABOUT";
+
+    document.querySelector("#about").appendChild(aboutHeader);
+    document.querySelector("#about").appendChild(aboutText);
+}
+
+function loadPortfolio() {
+
+    let portfolioHeader = document.createElement("h2");
+    portfolioHeader.className = "w3-border-bottom w3-border-amber";
+    portfolioHeader.setAttribute('style', 'border-width: 3px !important');
+    portfolioHeader.textContent = "PORTFOLIO";
+    document.querySelector("#portfolio").appendChild(portfolioHeader);
+    loadEmploymentHistory();
+}
+
+function loadCertificate() {
+    
 }
 
 function loadHomeText() {
@@ -93,16 +122,6 @@ function loadHomeText() {
     }
 
     interval = setInterval(Type, 100);
-}
-
-function loadPortfolio() {
-
-    let portfolioHeader = document.createElement("h2");
-    portfolioHeader.className = "w3-border-bottom w3-border-amber";
-    portfolioHeader.setAttribute('style', 'border-width: 3px !important');
-    portfolioHeader.textContent = "PORTFOLIO";
-    document.querySelector("#portfolio").appendChild(portfolioHeader);
-    loadEmploymentHistory();
 }
 
 function loadEmploymentHistory() {
@@ -190,22 +209,6 @@ function createMenuItem(name) {
     let li = document.createElement("li");
     li.textContent = name;
     return li;
-}
-
-function loadAboutText() {
-    let aboutText = document.createElement("p");
-    aboutText.id = "aboutText";
-    aboutText.style.textAlign = "justify";
-    aboutText.className = "w3-margin-top-2";
-    aboutText.textContent = "A Focused and quick-learning individual with more than 4 years of experience in development, customization, and support FinTech Enterprise Applications. A CBS application solution provider with expertise in working with Java web-based technologies and enterprise-level DB configuration, along with managing several technology projects in agile environments. Confident communicator and strategic thinker to build software customizable to meet organizational needs and highlight core competencies.";
-
-    let aboutHeader = document.createElement("h2");
-    aboutHeader.className = "w3-border-bottom w3-border-amber";
-    aboutHeader.setAttribute('style', 'border-width: 3px !important');
-    aboutHeader.textContent = "ABOUT";
-
-    document.querySelector("#about").appendChild(aboutHeader);
-    document.querySelector("#about").appendChild(aboutText);
 }
 
 function toggleNavigation() {
