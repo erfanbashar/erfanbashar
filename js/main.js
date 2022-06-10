@@ -25,6 +25,7 @@ function loadText() {
     loadAboutText();
     loadPortfolio();
     loadCertificates();
+    loadEducations();
 }
 
 function loadName() {
@@ -64,8 +65,74 @@ function loadPortfolio() {
     loadEmploymentHistory();
 }
 
-function loadCertificate() {
+function loadCertificates() {
+
+    let header = document.createElement("h3");
+    header.className = "w3-border-amber";
+    header.textContent = "CERTIFICATION & TRAINING";
+    document.querySelector("#certificate").appendChild(header);
+
+    let ul1 = createList();
+    document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified SQL Developer"));
+    ul1.appendChild(createMenuItem("Certified by Oracle University"));  
+    document.querySelector("#certificate").appendChild(ul1);
+
+    let ul2 = createList();
+    document.querySelector("#certificate").appendChild(createSubheader("Java Enterprise Edition with Spring Framework"));
+    ul2.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));  
+    document.querySelector("#certificate").appendChild(ul2);
     
+    let ul3 = createList();
+    document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified Java Associate"));
+    ul3.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));  
+    document.querySelector("#certificate").appendChild(ul3);
+
+}
+
+function loadEducations() {
+
+    let header = document.createElement("h3");
+    header.className = "w3-border-amber";
+    header.textContent = "MY EDUCATION";
+    document.querySelector("#educations").appendChild(header);
+
+    document.querySelector("#educations").appendChild(createSubheader("Master of Business Administration"));
+    let ul1 = createList();
+    ul1.appendChild(createMenuItem("Department of Marketing, University of Dhaka"));
+    ul1.appendChild(createMenuItem("April 2017 - December 2020"));
+    document.querySelector("#educations").appendChild(ul1);
+
+    document.querySelector("#educations").appendChild(createSubheader("Bachelor in Science"));
+    let ul2 = createList();
+    ul2.appendChild(createMenuItem("Department of Computer Science & Engineering, University of Dhaka"));
+    ul2.appendChild(createMenuItem("January 2011 - December 2014"));
+    document.querySelector("#educations").appendChild(ul2);
+
+    document.querySelector("#educations").appendChild(createSubheader("Higher Secondary School Certificate"));
+    let ul3 = createList();
+    ul3.appendChild(createMenuItem("Notre Dame College"));
+    ul3.appendChild(createMenuItem("2010"));
+    document.querySelector("#educations").appendChild(ul3);
+
+    document.querySelector("#educations").appendChild(createSubheader("Secondary School Certificate"));
+    let ul4 = createList();
+    ul4.appendChild(createMenuItem("Udayan School & College"));
+    ul4.appendChild(createMenuItem("2008"));
+    document.querySelector("#educations").appendChild(ul4);
+}
+
+function createList() {
+    let ul = document.createElement("ul");
+    ul.className = "w3-ul";
+    ul.style.fontWeight = "600";
+
+    return ul;
+}
+
+function createSubheader(subHeader) {
+    let h4 = document.createElement("h4");
+    h4.textContent = subHeader;
+    return h4;
 }
 
 function loadHomeText() {
