@@ -12,9 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- testimonial section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- testimonial section -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="js/main.js"></script>
     <script src="js/featherIcon.js"></script>
+    <!-- testimonial section -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <!-- testimonial section -->
 </head>
 
 <body onload="onLoad()">
@@ -70,7 +78,7 @@
             <div class="content-container w3-margin-top-2">
                 <!--HOME SECTION-->
                 <div id="home" class="home w3-container w3-margin-top-4 w3-cursive">
-                    <div id="container"></div>
+                    <!-- <div id="container"></div> -->
                 </div>
 
                 <!--ABOUT SECTION-->
@@ -118,22 +126,158 @@
                 </div>
                 <hr>
 
-                <!--REFERENCE SECTION-->
+                <!--TESTIMONIAL SECTION-->
                 <div class="w3-container w3-margin-top-2 w3-cursive reveal">
-                    <h3 class="w3-border-amber">REFERENCES</h3>
-                    <h4>Sharif Ahmed</h4>
-                    <ul class="w3-ul" style="font-weight: 500; font-size: medium;">
-                        <li>Head of Technology Project & Core Banking System, Mutual Trust Bank Limited, Dhaka, Bangladesh</li>
-                        <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801755632800</li>
-                        <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> ahmed.sharif@mutualtrustbank.com</li>
-                    </ul>
-                    <h4>Uttam Adhikari</h4>
-                    <ul class="w3-ul" style="font-weight: 500; font-size: medium;">
-                        <li>Head of Core Banking Application, BRAC Bank Limited, Dhaka, Bangladesh</li>
-                        <li>BRAC Bank Limited, Dhaka, Bangladesh</li>
-                        <li><i class="fa fa-mobile fa-2x" aria-hidden="true"></i> +8801713493985</li>
-                        <li><i class="fa fa-envelope fa-1x" aria-hidden="true"></i> uttam.adhikari@bracbank.com</li>
-                    </ul>
+                    <h3 class="w3-border-amber">TESTIMONIAL</h3>
+                    <h4>What industry professionals say about me</h4>
+                    <!-- testimonial section -->
+
+                    <section class="testimonial-section">
+                        <div class="testimonials-carousel-wrap">
+                            <div class="listing-carousel-button listing-carousel-button-next"></div>
+                            <div class="listing-carousel-button listing-carousel-button-prev"></div>
+                            <div class="testimonials-carousel">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                        <!--first--->
+
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="zia-sajid.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>Erfan is the name of the most dependable resource in the banking industry. He has developed himself as Core Banking Professional. He contains control over the database and software engineering. As a
+                                                        human, it's always fun to work with, dedicated, and keen to meet the timeline. The problem-solving and customer-centric mentality is his best personal attribute. He is such kind of resource every
+                                                        organization wants. Wish him every success in life.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Md. Zia Sajid</h3>
+                                                        <p>Growth Hacker|SAVP|Senior Project Manager|Business & Digital Transformation|Bigdata Enthusiast</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                                            </div>
+                                        </div>
+
+                                        <!--second--->
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="nazmul-ahsan.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>Erfan holds extensive skills in developing technical features of Core Banking Applications. He also played a key role in several technology projects related to financial solutions. His ability to sense
+                                                        the significance of responsibilities and deliver accordingly is exemplary. I saw him working on multiple projects at the same time pretty efficiently.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Md Nazmul Ahsan</h3>
+                                                        <p>ASSISTANT VICE PRESIDENT|FINANCIAL & FINTECH INDUSTRY|DIGITAL TRANSFORMATION</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                                            </div>
+                                        </div>
+                                        <!--third-->
+
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="rashed-azad.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>It was my pleasure working with Mr. Erfan Bashar at BRAC Bank Limited. He is a key player for Core Banking Application. Being a Project Manager I was always in the comfort zone in any situation working
+                                                        with him. I wish him all the best in his upcoming careers.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Md. Rashed Azad Chowdhury</h3>
+                                                        <p>Senior Manager & AVP|Project Manager|City Banker|Business Analyst|DMAIC|Enterprise Solution Implementation|Agile Practitioner|Ex. BRAC Bank|Ex. Samsung</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                                            </div>
+                                        </div>
+
+                                        <!--fourth-->
+
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="omar-faruk.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>I worked with Mr. Erfan at BRAC Bank Ltd. During my working tenure with him, I found Mr. Erfan very hard working, efficient & having great knowledge in his job dimension. Mr. Erfan has great sense of
+                                                        responsibility & thinks strategically to add value. I wish him all the success in his life.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Md. Omar Faruk</h3>
+                                                        <p>Business Development|Governance|Process Re-Engineering|Digital Transformation|Product|Project Mgt</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+
+                                            </div>
+                                        </div>
+
+                                        <!--fifth-->
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="gaus-samdani.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>I rarely come across real talents who stand out like Erfan. I had the pleasure of working with Erfan for one and half year at Brac Bank, collaborating on several project teams. Erfan’s ability to handle
+                                                        multiple projects was exemplary and he worked well under pressure. Erfan posses the unique skill of making seemingly difficult IT issues easy to Finance professionals. As a senior colleague in Brac
+                                                        Bank , Erfan earns my highest recommendation.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Gaus Samdani, ACA</h3>
+                                                        <p>Head of Financial Controls, BRAC Bank Ltd</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+
+                                            </div>
+                                        </div>
+
+                                        <!--sixth-->
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="ashraful-karim.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>I had the privilege of working with Erfan in Core Banking Application team for more than two and a half year at BRAC Bank Ltd. Erfan is proactive, result oriented, responsible and technically very sound
+                                                        and he is always ready to put all his energy and time to get the job done. He has an exceptional troubleshooting and analytical skill in banking, Oracle / SQL databases and Java oriented platforms.
+                                                        Erfan is a great asset to any company. I highly recommend Erfan Bashar and look forward to work with him in future. Best wishes for his future as always.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Ashraful Karim</h3>
+                                                        <p>Associate Manager, Core Banking Application, Technology Division, BRAC Bank Ltd.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+
+                                            </div>
+                                        </div>
+
+                                        <!--seventh-->
+                                        <div class="swiper-slide">
+                                            <div class="testi-item">
+                                                <div class="testi-avatar"><img src="imran-khan.jpeg"></div>
+                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
+                                                <div class="testimonials-text">
+                                                    <p>'Outstandingly Efficient' is the phrase that comes to mind when I think about Mr. Erfan. I had the pleasure of working with him at BRAC Bank Ltd., collaborating on several crucial project teams. Erfan’s
+                                                        ability to juggle multiple projects was unlike any I’ve seen before and made a dramatic difference in the productivity level of our team. No matter how complex a situation, he come up with a positive
+                                                        result. He is very talented, well mannered, organised and extremely hard working. Erfan would be an absolute asset to any team.</p>
+                                                    <div class="testimonials-avatar">
+                                                        <h3>Imran Khan</h3>
+                                                        <p>Manager, Core Banking Application at BRAC Bank Limited|Finacle|BankUltimus</p>
+                                                    </div>
+                                                </div>
+                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+
+                                            </div>
+                                        </div>
+
+                                        <!--testi end-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tc-pagination" style="text-align: center !important;"></div>
+                    </section>
+
+                    <!-- testimonial section -->
 
                 </div>
                 <hr>
