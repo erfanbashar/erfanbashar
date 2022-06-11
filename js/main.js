@@ -26,6 +26,7 @@ function loadText() {
     loadPortfolio();
     loadCertificates();
     loadEducations();
+    loadTestimonial()
 }
 
 function loadName() {
@@ -74,17 +75,17 @@ function loadCertificates() {
 
     let ul1 = createList();
     document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified SQL Developer"));
-    ul1.appendChild(createMenuItem("Certified by Oracle University"));  
+    ul1.appendChild(createMenuItem("Certified by Oracle University"));
     document.querySelector("#certificate").appendChild(ul1);
 
     let ul2 = createList();
     document.querySelector("#certificate").appendChild(createSubheader("Java Enterprise Edition with Spring Framework"));
-    ul2.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));  
+    ul2.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));
     document.querySelector("#certificate").appendChild(ul2);
-    
+
     let ul3 = createList();
     document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified Java Associate"));
-    ul3.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));  
+    ul3.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));
     document.querySelector("#certificate").appendChild(ul3);
 
 }
@@ -93,7 +94,7 @@ function loadEducations() {
 
     let header = document.createElement("h3");
     header.className = "w3-border-amber";
-    header.textContent = "MY EDUCATION";
+    header.textContent = "EDUCATIONAL QUALIFICATIONS";
     document.querySelector("#educations").appendChild(header);
 
     document.querySelector("#educations").appendChild(createSubheader("Master of Business Administration"));
@@ -311,3 +312,53 @@ function getCv() {
     var cv = document.querySelector("#cv");
     cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=sharing";
 }
+
+// testimonial section
+
+function loadTestimonial() {
+    "use strict";
+
+    if ($(".testimonials-carousel").length > 0) {
+        var j2 = new Swiper(".testimonials-carousel .swiper-container", {
+            preloadImages: false,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            grabCursor: true,
+            mousewheel: false,
+            centeredSlides: true,
+            pagination: {
+                el: '.tc-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.listing-carousel-button-next',
+                prevEl: '.listing-carousel-button-prev',
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 1,
+                },
+
+            }
+        });
+    }
+
+    // bubbles -----------------
+
+
+    setInterval(function() {
+        var size = randomValue(sArray);
+        $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+        $('.individual-bubble').animate({
+            'bottom': '100%',
+            'opacity': '-=0.7'
+        }, 4000, function() {
+            $(this).remove()
+        });
+    }, 350);
+
+}
+
+// testimonial section
