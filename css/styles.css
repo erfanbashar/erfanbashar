@@ -498,4 +498,8 @@ ul li {
     .download-text {
         display: inline-block;
     }
+    .tc-pagination {
+        text-align: left;
+        margin-left: 25%;
+    }
 }
