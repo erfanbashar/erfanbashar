@@ -499,7 +499,6 @@ ul li {
         display: inline-block;
     }
     .tc-pagination {
-        text-align: left;
-        margin-left: 25%;
+        text-align: center;
     }
 }
