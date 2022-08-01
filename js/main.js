@@ -45,7 +45,7 @@ function loadAboutText() {
     aboutText.id = "aboutText";
     aboutText.style.textAlign = "justify";
     aboutText.className = "w3-margin-top-2";
-    aboutText.textContent = "A Focused and quick-learning individual with more than 4 years of experience in development, customization, and support FinTech Enterprise Applications. A CBS application solution provider with expertise in working with Java web-based technologies and enterprise-level DB configuration, along with managing several technology projects in agile environments. Confident communicator and strategic thinker to build software customizable to meet organizational needs and highlight core competencies.";
+    aboutText.textContent = "A focused and quick-learning tech solutionist in the FinTech industry with more than 5 years of experience in development, customization, support, and manage enterprise applications. Provider of CBS application solution with expertise in working with Java web-based technologies, enterprise DB business logic configuration, and managing several technology projects in agile environments. Confident communicator and strategic thinker to build scalable softwares customizable to meet organizational needs and highlight core competencies.";
 
     let aboutHeader = document.createElement("h2");
     aboutHeader.className = "w3-border-bottom w3-border-amber";
