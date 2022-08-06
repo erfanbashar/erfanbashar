@@ -139,7 +139,7 @@ function createSubheader(subHeader) {
 function loadHomeText() {
 
     let homeText = document.createElement("p");
-    homeText.textContent = "CBS Developer & FinTech Solution Provider|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Tech & Football|";
+    homeText.textContent = "CBS Developer & FinTech Solutionist|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Football & Anyplace Around A Sea|";
     let homeTextArray = homeText.textContent.split("|");
     let part = 0;
     let partIndex = 0;
@@ -213,30 +213,22 @@ function loadEmploymentHistory() {
 
 function getBblExperience(div) {
     let organizationName = document.createElement("h4");
-    organizationName.textContent = "BRAC Bank Limited";
+    organizationName.innerHTML = '<span style="color: orange;">Technology Division</span>' + ' | BRAC Bank Limited';
     div.appendChild(organizationName);
 
     var designation = document.createElement("h4");
-    designation.textContent = "Senior Officer, Core Banking Application, Technology Division";
-    div.appendChild(designation);
+    designation.innerHTML = '<span style="color: orange;">Senior Officer</span>' + ' | May 2019 - June 2021';
 
-    var tenor = document.createElement("p");
-    tenor.style.textAlign = "right";
-    tenor.textContent = "May 2019 - June 2021";
-    div.appendChild(tenor);
+    div.appendChild(designation);
 
     designation = document.createElement("h4");
-    designation.textContent = "Officer, Core Banking Application, Technology Division";
+    designation.innerHTML = '<span style="color: orange;">Officer</span>' + ' | August 2017 - April 2019';
     div.appendChild(designation);
-
-    tenor = document.createElement("p");
-    tenor.style.textAlign = "right";
-    tenor.textContent = "August 2017 - April 2019";
-    div.appendChild(tenor);
 
     let jobDescription = document.createElement("ul");
     jobDescription.className = "w3-ul";
     jobDescription.style.fontWeight = "500";
+    jobDescription.style.textAlign = "justify";
     jobDescription.appendChild(createMenuItem("Enhanced existing modules and develop new features to provide critical resolution, and analysed, modified, and supported for RCA and Permanent Resolution of the Core Banking Application."));
     jobDescription.appendChild(createMenuItem("Analysed business requirements, produced system design to support upgrades and ongoing maintenance, defined problem-solving procedures through interaction with internal customers (up to L2) to prepare, compare and recommend alternate solutions."));
     jobDescription.appendChild(createMenuItem("Wrote, tested, and debugged SQL/PL-SQL codes, stored procedures, views and functions, and other ETL processes to ensure optimal performance, reliability, and integrity."));
@@ -248,21 +240,17 @@ function getBblExperience(div) {
 
 function getMtbExperience(div) {
     let organizationName = document.createElement("h4");
-    organizationName.textContent = "Mutual Trust Bank Limited";
+    organizationName.innerHTML = '<span style="color: orange;">Digital Banking Division</span>' + ' | Mutual Trust Bank Limited';
     div.appendChild(organizationName);
 
     let designation = document.createElement("h4");
-    designation.textContent = "Senior Officer, Digital Banking Division";
+    designation.innerHTML = '<span style="color: orange;">Senior Officer</span>' + ' | July 2021 - Present';
     div.appendChild(designation);
-
-    let tenor = document.createElement("p");
-    tenor.style.textAlign = "right";
-    tenor.textContent = "July 2021 - Present";
-    div.appendChild(tenor);
 
     let jobDescription = document.createElement("ul");
     jobDescription.className = "w3-ul";
     jobDescription.style.fontWeight = "500";
+    jobDescription.style.textAlign = "justify";
     jobDescription.appendChild(createMenuItem("Managing projects throughout the entire execution period to ensure success in terms of scope, budget, and timeline."));
     jobDescription.appendChild(createMenuItem("Working as the “missing middle” between business and CBS application to integrate systems for achieving efficient solutions."));
     jobDescription.appendChild(createMenuItem("Developing and reviewing comprehensive project plans to bundle requirements with goals, and coordinating various stakeholders during all project phases, from initial development through implementation."));
