@@ -26,7 +26,8 @@ function loadText() {
     loadPortfolio();
     loadCertificates();
     loadEducations();
-    loadTestimonial()
+    loadTestimonial();
+    loadContact();
 }
 
 function loadName() {
@@ -139,7 +140,7 @@ function createSubheader(subHeader) {
 function loadHomeText() {
 
     let homeText = document.createElement("p");
-    homeText.textContent = "CBS Developer & FinTech Solution Provider|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Football & Anyplace Around A Sea|";
+    homeText.textContent = "CBS Developer & FinTech Solutionist|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Football & Anyplace Around A Sea|";
     let homeTextArray = homeText.textContent.split("|");
     let part = 0;
     let partIndex = 0;
@@ -350,3 +351,30 @@ function loadTestimonial() {
 }
 
 // testimonial section
+
+function loadContact() {
+
+    let headerContact = document.createElement("h2");
+    headerContact.className = "w3-border-bottom w3-border-amber";
+    headerContact.setAttribute('style', 'border-width: 3px !important;');
+    headerContact.textContent = "CONTACT DETAILS";
+    document.querySelector("#contact").appendChild(headerContact);
+
+    let divContact = document.createElement("div");
+    divContact.id = "div-contact";
+    divContact.className = "w3-margin-top-2";
+    divContact.style.fontWeight = "500";
+    document.querySelector("#contact").appendChild(divContact);
+
+    divContact.appendChild(createTextItem("Adress: House 6, Road 5, Dhanmondi, Dhaka-1205, Bangladesh"));
+    divContact.appendChild(createTextItem("Phone number: +8801700714540"));
+    divContact.appendChild(createTextItem("E-mail: erfan.bashar.13@gmail.com"));  
+
+}
+
+function createTextItem(text) {
+    let p = document.createElement("p");
+    p.textContent = text;
+    p.setAttribute('style', 'font-weight: 500; font-size: medium !important;');
+    return p;
+}
