@@ -298,7 +298,7 @@ function getInstagram() {
 
 function getCv() {
     var cv = document.querySelector("#cv");
-    cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=sharing";
+    cv.href = "https://drive.google.com/file/d/1XpVCioNNiucGeBEVDZO6BpZ6eC9wTRLg/view?usp=sharing";
 }
 
 // testimonial section
