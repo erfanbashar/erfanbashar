@@ -18,6 +18,7 @@ window.addEventListener("scroll", reveal);
 
 function onLoad() {
     loadText();
+    fetchCv();
 }
 
 function loadText() {
@@ -26,7 +27,8 @@ function loadText() {
     loadPortfolio();
     loadCertificates();
     loadEducations();
-    loadTestimonial()
+    loadTestimonial();
+    loadContactDetails();
 }
 
 function loadName() {
@@ -215,11 +217,11 @@ function loadEmploymentHistory() {
 
 function getNagadExperience(div) {
     let organizationName = document.createElement("h4");
-    organizationName.innerHTML = '<span style="color: orange;">Digital Bank</span>' + ' | Nagad Limited';
+    organizationName.innerHTML = '<span style="color: orange;">CBS Integration & Projects</span>' + ' | Nagad Limited';
     div.appendChild(organizationName);
 
     let designation = document.createElement("h4");
-    designation.innerHTML = '<span style="color: orange;">Lead Engineer, CBS Integration & Projects</span>' + ' | June 2023 - Present';
+    designation.innerHTML = '<span style="color: orange;">Lead Engineer</span>' + ' | June 2023 - Present';
 
     div.appendChild(designation);
 
@@ -321,20 +323,61 @@ function getInstagram() {
     instagram.href = "https://www.instagram.com/erfanbashar13/";
 }
 
-async function getCv() {
+function fetchCv() {
+    fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+    .then((response) => response.json())
+    .then((jsonResponse) => {
+        const respCountry = jsonResponse.country;
+        getCv(respCountry);
+    });
+}
+
+function getCv(respCountry) {
+
     let cv = document.querySelector("#cv");
-
-    const request = await fetch("https://ipinfo.io/json?token=8d1dda29c0e932");
-    const jsonResponse = await request.json();
-    const orgCountry = jsonResponse.country;
-
-    if(orgCountry == 'BD') {
-        cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=sharing";
+    // alert(respCountry);
+    if(respCountry == 'BD') {
+        cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=drive_link";
     }
     else {
-        cv.href = "https://drive.google.com/file/d/11m5XjFKuj_wEieCRtb-nIrmabQ1zJHkm/view?usp=drive_link";
+        cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=drive_link";
     }
-    
+}
+
+function loadContactDetails() {
+    let contactHeader = document.createElement("h2");
+    contactHeader.className = "w3-border-bottom w3-border-amber";
+    contactHeader.setAttribute('style', 'border-width: 3px !important');
+    contactHeader.textContent = "CONTACT DETAILS";
+    document.querySelector("#contact").appendChild(contactHeader);
+
+    let contactSubDiv = document.createElement("div");
+    contactSubDiv.id = "contactSubDiv";
+    contactSubDiv.className = "w3-margin-top-2";
+    contactSubDiv.setAttribute('style', 'font-weight: 500');
+
+    fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+    .then((response) => response.json())
+    .then((jsonResponse) => {
+        const respCountry = jsonResponse.country;
+        
+        if(respCountry == 'BD') {
+            let ul1 = createList();
+            ul1.appendChild(createMenuItem("Adress: House 6, Road 5, Dhanmondi, Dhaka-1205, Bangladesh"));
+            ul1.appendChild(createMenuItem("Phone number: +8801700714540"));
+            ul1.appendChild(createMenuItem("E-mail: erfan.bashar.13@gmail.com"));
+            contactSubDiv.appendChild(ul1);
+            
+        }
+        else {
+            let ul1 = createList();
+            ul1.appendChild(createMenuItem("Mississauga, Toronto, Canada"));
+            ul1.appendChild(createMenuItem("E-mail: erfan.bashar.13@gmail.com"));
+            contactSubDiv.appendChild(ul1);
+        }
+    });
+
+    document.querySelector("#contact").appendChild(contactSubDiv);
 }
 
 // testimonial section
