@@ -1,5 +1,5 @@
 /* ===================================================================
- * Ceevee 2.0.0 - Main JS
+ * Main JS
  *
  * ------------------------------------------------------------------- */
 
@@ -8,7 +8,6 @@
     "use strict";
     
     html.className = html.className.replace(/\bno-js\b/g, '') + ' js ';
-
 
    /* Preloader
     * -------------------------------------------------- */
@@ -37,6 +36,129 @@
 
     }; // end ssPreloader
 
+    /* start createMenuItem
+    * -------------------------------------------------- */
+
+    const createMenuItem = function (name) {
+        let li = document.createElement("li");
+        li.textContent = name;
+        return li;
+    };
+
+    /* end createMenuItem
+    * -------------------------------------------------- */
+
+    /* start ssContactLoader
+    * -------------------------------------------------- */
+    const ssContactLoader = function() {
+
+        let preloader = document.querySelector(".row .s-about__content-bottom");
+        // if (!preloader) return;
+
+        let contactDiv = document.createElement("div");
+        contactDiv.className = "column w-1000-stack";
+        preloader.appendChild(contactDiv);
+
+        let contactHeader = document.createElement("h3");
+        contactHeader.textContent = "Contact Details";
+        contactDiv.appendChild(contactHeader);
+
+        let list = document.createElement("ul");
+        list.setAttribute('style', 'list-style-type: none; margin: 0; padding: 0;');
+        list.appendChild(createMenuItem("A M A Erfan Bashar"));
+
+        fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            const respCountry = jsonResponse.country;
+            let cv = document.querySelector("#cv");
+            if(respCountry == 'BD') {
+                list.appendChild(createMenuItem("Dhaka, Bangladesh"));
+                
+                let contactPhoneList = document.createElement("li");
+                let contactPhone = document.createElement("a");
+                contactPhone.href = "tel:+8801700714540";
+                contactPhone.textContent = "+880-1700-714540";
+                contactPhoneList.appendChild(contactPhone);
+                list.appendChild(contactPhoneList);
+
+                let contactEmailList = document.createElement("li");
+                let contactEmail = document.createElement("a");
+                contactEmail.href = "mailto:#0";
+                contactEmail.textContent = "erfan.bashar.13@gmail.com";
+                contactEmailList.appendChild(contactEmail);
+                list.appendChild(contactEmailList);
+
+                contactDiv.appendChild(list);
+
+                cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=drive_link";
+            }
+            else {
+                list.appendChild(createMenuItem("Mississauga, Ontario, Canada"));
+                
+                let contactPhoneList = document.createElement("li");
+                let contactPhone = document.createElement("a");
+                contactPhone.href = "tel:+16046182296";
+                contactPhone.textContent = "+1 (604) 6182296";
+                contactPhoneList.appendChild(contactPhone);
+                list.appendChild(contactPhoneList);
+
+                let contactEmailList = document.createElement("li");
+                let contactEmail = document.createElement("a");
+                contactEmail.href = "mailto:#0";
+                contactEmail.textContent = "erfan.bashar.13@gmail.com";
+                contactEmailList.appendChild(contactEmail);
+                list.appendChild(contactEmailList);
+
+                contactDiv.appendChild(list);
+
+                cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=drive_link";
+            }
+        });
+
+    }; // end ssContactLoader
+
+    /* start ssMobileLoader
+    * -------------------------------------------------- */
+    const ssMobileLoader = function() {
+
+        let preloader = document.querySelector("#phone");
+        // if (!preloader) return;
+
+        let phoneDiv = document.createElement("div");
+        phoneDiv.className = "contact-block";
+        preloader.appendChild(phoneDiv);
+
+        let phoneHeader = document.createElement("h5");
+        phoneHeader.className = "contact-block__header";
+        phoneHeader.textContent = "Phone";
+        phoneDiv.appendChild(phoneHeader);
+
+        let phoneLine = document.createElement("p");
+        phoneLine.className = "contact-block__content";
+        let phoneLink = document.createElement("a");
+
+        fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            const respCountry = jsonResponse.country;
+            if(respCountry == 'BD') {
+                phoneLink.href = "tel:+8801700714540";
+                phoneLink.textContent = "+880-1700-714540";
+
+                phoneLine.appendChild(phoneLink);
+            }
+            else {
+                phoneLink.href = "tel:+16046182296";
+                phoneLink.textContent = "+1 (604) 6182296";
+
+                phoneLine.appendChild(phoneLink);
+            }
+        });
+
+        phoneDiv.appendChild(phoneLine);
+
+    }; // end ssMobileLoader
 
    /* Parallax
     * -------------------------------------------------- */
@@ -302,6 +424,8 @@
     (function ssInit() {
 
         ssPreloader();
+        ssContactLoader();
+        ssMobileLoader();
         ssParallax();
         ssMoveHeader();
         ssMobileMenu();
