@@ -91,7 +91,7 @@
 
                 contactDiv.appendChild(list);
 
-                cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=drive_link";
+                cv.href = "https://drive.google.com/file/d/134VjxYA1-ZAn-6TYvi1IPsHHfcPCWv1W/view?usp=sharing";
             }
             else {
                 list.appendChild(createMenuItem("Mississauga, Ontario, Canada"));
@@ -112,7 +112,7 @@
 
                 contactDiv.appendChild(list);
 
-                cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=drive_link";
+                cv.href = "https://drive.google.com/file/d/1B61wfX7QKzlZEC8US6FAazH0Dr10e5LQ/view?usp=sharing";
             }
         });
 
