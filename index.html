@@ -1,294 +1,631 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Erfan Bashar Portfolio</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--Montserrat font-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- testimonial section -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- testimonial section -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="js/main.js"></script>
-    <script src="js/featherIcon.js"></script>
-    <!-- testimonial section -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
-    <!-- testimonial section -->
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Hello Erfan</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script defer src="js/vendor/fontawesome/all.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest"> -->
+
 </head>
 
-<body onload="onLoad()">
-    <section>
-        <!-- MOBILE NAVIGATION -->
-        <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
-            <a href="#home" style="font-style: italic; font-size:x-large;" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-hover-border-orange w3-hover-text-orange">Erfan Bashar</a>
-            <a href="javascript:void(0)" style="font-style: bold; font-size:x-large;" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-hover-text-orange" onclick="toggleNavigation()">&#9776;</a>
-        </div>
-        <div id="mobile-nav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-sticky">
-            <a href="#about" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange" onclick="toggleNavigation()">ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange" onclick="toggleNavigation()">PORTFOLIO</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange" onclick="toggleNavigation()">CONTACT</a>
-        </div>
+<body id="top" class="ss-preload">
 
-        <!-- SOCIAL SECTION -->
-        <section class="image-section w3-quarter w3-fixed w3-padding-small">
-            <!--IMAGE/AVATAR-->
-            <img src="self2.jpeg" class="w3-circle w3-border w3-border-sand" style="border-width: 3px !important;" />
-            <!--SOCIAL NETWORK BUTTONS-->
-            <div class="links w3-margin-top w3-padding-small">
-                <a class="icon-link w3-text-sand w3-hover-text-amber" id="linkedin" onclick="getLinkedin()" target="_blank">
-                    <i data-feather="linkedin"></i>
-                </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" id="github" onclick="getGithub()" target="_blank">
-                    <i data-feather="github"></i>
-                </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" id="facebook" onclick="getFacebook()" target="_blank">
-                    <i data-feather="facebook"></i>
-                </a>
-                <a class="icon-link w3-text-sand w3-hover-text-amber" id="instagram" onclick="getInstagram()" target="_blank">
-                    <i data-feather="instagram"></i>
-                </a>
-            </div>
-            <!--CV DOWNLOAD BUTTON-->
-            <div class="w3-container w3-padding-16">
-                <a id="cv" onclick="fetchCv()" class="w3-amber w3-hover-amber w3-button w3-round-small w3-hover-deep-orange w3-padding-large" target="_blank" download="Erfan Bashar CV.pdf">
-                    <i data-feather="arrow-down" style="vertical-align: -0.35em;"></i>
-                    <span class="w3-margin-left download-text">DOWNLOAD CV</span>
-                </a>
-            </div>
-        </section>
 
-        <!--CV CONTENT SECTION-->
-        <section class="w3-threequarter w3-padding-large w3-right">
-            <!--DESKTOP NAVIGATION-->
-            <div class="w3-container w3-padding-large w3-border-bottom w3-hide-small">
-                <a href="#home" style="font-style: italic; font-size:x-large;" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-hover-border-orange w3-hover-text-orange">Erfan Bashar</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">CONTACT</a>
-                <a href="#portfolio" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PORTFOLIO</a>
-                <a href="#about" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-orange w3-hover-text-orange w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">ABOUT</a>
-            </div>
-            <div class="content-container w3-margin-top-2">
-                <!--HOME SECTION-->
-                <div id="home" class="home w3-container w3-margin-top-4 w3-cursive"></div>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
 
-                <!--ABOUT SECTION-->
-                <div id="about" class="w3-container w3-margin-top-10-percent w3-cursive w3-large"></div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+        <div class="row s-header__nav-wrap">
+            <nav class="s-header__nav">
+                <ul>
+                    <li class="current"><a class="smoothscroll" href="#hero">Home</a></li>
+                    <li><a class="smoothscroll" href="#about">About</a></li>
+                    <li><a class="smoothscroll" href="#resume">Resume</a></li>
+                    <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+                    <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+                    <li><a class="smoothscroll" href="#contact">Say Hello</a></li>
+                </ul>
+            </nav>
+        </div> <!-- end row -->
+        
+        <a class="s-header__menu-toggle" href="#0" title="Menu">
+            <span class="s-header__menu-icon"></span>
+        </a>
+    </header> <!-- end s-header -->
+
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <div class="s-hero__content-about">
+
+                    <h1>I'm Erfan Bashar.</h1>
+
+                    <h3>
+                        <span class="summary">
+                            CBS Developer & FinTech Solutionist | OCP Java
+                            <br>
+                            PL/SQL & ETL Developer | Technology Project Facilitator
+                        </span>
+                        <br>
+                        <br>
+                        Let's <a class="smoothscroll" href="#about">start scrolling</a>
+                        to learn more <a class="smoothscroll" href="#about">about me</a>.
+                    </h3>
+
+                    <div class="s-hero__content-social">
+                        <a href="https://www.linkedin.com/in/erfanbashar/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://github.com/erfanbashar" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://stackoverflow.com/users/2305431/erfan-bashar" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/erfan.bashar.7/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/erfanbashar13/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+
+                </div> <!-- end s-hero__content-about -->
+
+            </div>
+        </div> <!-- s-hero__content -->
+
+        <div class="s-hero__scroll">
+            <a href="#about" class="s-hero__scroll-link smoothscroll">
+                <span class="scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z"></path></svg>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </div> <!-- s-hero__scroll -->
+
+    </section> <!-- end s-hero -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+
+        <div class="row">
+            <div class="column large-3 tab-12">
+                <img class="s-about__pic" src="images/avatars/self2.jpeg" alt="">
+            </div>
+            <div class="column large-9 tab-12 s-about__content">
+                <h3>About Me</h3>
+                <p>
+                    I design, develop, and implement the technical architecture for the Banking Systems, ensuring feature development, efficient and quality code delivery, patch deployment, and technical support while working with various stakeholders and teams to achieve optimal outcomes. Having more than six years of experience in the FinTech industry, I developed, customized, supported, and managed more than 25 enterprise financial applications. I enhanced and integrated CBS modules and features, analyzed business requirements and system design, and led several technology projects in agile environments using frameworks and technologies like Java, PL/SQL, JavaScript, and Shell Scriptings.
+                </p>
+
                 <hr>
 
-                <!--PORTFOLIO-->
-                <div id="portfolio" class="w3-container w3-margin-top-10-percent w3-cursive reveal"></div>
-                <hr>
-
-                <!--SKILLS SECTION-->
-                <div id="skills" class="w3-container w3-margin-top-2 w3-cursive reveal">
-                    <h3 class="w3-border-amber">SKILLS & TOOLS</h3>
-                    <!--TECHNICAL SKILLS-->
-                    <h4>Technical skills</h4>
-                    <ul class="w3-ul" style="font-weight: 500;">
-                        <li><span style="font-style: italic;">Programming Languages:</span> Java, SQL, PL/SQL, JS, Shell Script</li>
-                        <li><span style="font-style: italic;">Web Design:</span> HTML5, CSS3, Bootstrap</li>
-                        <li><span style="font-style: italic;">Web Development Framework:</span> SpringBoot, Hibernate, Lombok</li>
-                        <li><span style="font-style: italic;">DBMS:</span> Oracle DB, MySQL</li>
-                        <li><span style="font-style: italic;">API Integration & Testing:</span> REST, Postman, SoapUI</li>
-                        <li><span style="font-style: italic;">Technical Writing & Documentation:</span> Test Cases, BRD, SRS</li>
-                        <li><span style="font-style: italic;">Technical Testing:</span> UI/UX Test, Patch Service Pack Testing, UAT</li>
-                        <li><span style="font-style: italic;">VCS & Code Repo:</span> Git, GitHub</li>
-                        <li><span style="font-style: italic;">IT Issue & Task Management:</span> Microsoft SCSM</li>
-                    </ul>
+                <div class="row s-about__content-bottom">
+                    <div class="column w-1000-stack">
+                        <a id="cv" onclick="fetchCv()" class="btn btn--download" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
+                            Download CV
+                        </a>
+                    </div>
                 </div>
-                <hr>
+            </div>
+        </div> <!-- end row -->
 
-                <!---CERTIFICATION & TRAINING SECTION-->
-                <div class="w3-container w3-margin-top-2 w3-cursive reveal" id="certificate"></div>
-                <hr>
+    </section> <!-- end s-about -->
 
-                <!---EDUCATION SECTION-->
-                <div class="w3-container w3-margin-top-2 w3-cursive reveal" id="educations"></div>
-                <hr>
 
-                <!--TESTIMONIAL SECTION-->
-                <div class="w3-container w3-margin-top-2 w3-cursive reveal">
-                    <h3 class="w3-border-amber">TESTIMONIAL</h3>
-                    <h4>What industry professionals say about me</h4>
-                    <!-- testimonial section -->
+    <!-- resume
+    ================================================== -->
+    <section id="resume" class="s-resume target-section">
+        
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Career</h3>
+            </div>
+            <div class="column large-9 tab-12">
 
-                    <section class="testimonial-section">
-                        <div class="testimonials-carousel-wrap">
-                            <div class="listing-carousel-button listing-carousel-button-next"></div>
-                            <div class="listing-carousel-button listing-carousel-button-prev"></div>
-                            <div class="testimonials-carousel">
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
+                <div class="resume-block">
 
-                                        <!--first--->
+                    <div class="resume-block__header">
+                        <h4 class="h3">Nagad Digital Bank PLC</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Lead Engineer, CBS Integration & Projects, Technology</span> 
+                            <span class="resume-block__header-date">
+                                June 2023 - Present
+                            </span>
+                        </p>
+                    </div>
 
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="zia-sajid.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">Erfan is the name of the most dependable resource in the banking industry. He has developed himself as Core Banking Professional. He contains control over the database and software engineering. As a
-                                                        human, it's always fun to work with, dedicated, and keen to meet the timeline. The problem-solving and customer-centric mentality is his best personal attribute. He is such kind of resource every
-                                                        organization wants. Wish him every success in life.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Md. Zia Sajid</h3>
-                                                        <p>Growth Hacker|SAVP|Senior Project Manager|Business & Digital Transformation|Bigdata Enthusiast</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
-                                            </div>
-                                        </div>
+                    <span class="resume-block__header-date"></span>
+                    Designing overall solution architecture and implementation plan for CBS implementation
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Identifying, tracking, and reviewing CBS deliverables with efficient and quality code
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Developing, fixing, and improving CBS functionalities according to Business/System requirements
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Ensuring patch deployment planning and delivery of system integration.
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Providing technical support and expertise advice throughout all technical-functional CBS features
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Identifying, defining, and coordinating development activities for the Change Request of the CBS project
+                    
 
-                                        <!--second--->
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="nazmul-ahsan.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">Erfan holds extensive skills in developing technical features of Core Banking Applications. He also played a key role in several technology projects related to financial solutions. His ability to sense
-                                                        the significance of responsibilities and deliver accordingly is exemplary. I saw him working on multiple projects at the same time pretty efficiently.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Md Nazmul Ahsan</h3>
-                                                        <p>ASSISTANT VICE PRESIDENT|FINANCIAL & FINTECH INDUSTRY|DIGITAL TRANSFORMATION</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
-                                            </div>
-                                        </div>
-                                        <!--third-->
+                </div> <!-- end resume-block -->
 
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="rashed-azad.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">It was my pleasure working with Mr. Erfan Bashar at BRAC Bank Limited. He is a key player for Core Banking Application. Being a Project Manager I was always in the comfort zone in any situation working
-                                                        with him. I wish him all the best in his upcoming careers.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Md. Rashed Azad Chowdhury</h3>
-                                                        <p>Senior Manager & AVP|Project Manager|City Banker|Business Analyst|DMAIC|Enterprise Solution Implementation|Agile Practitioner|Ex. BRAC Bank|Ex. Samsung</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
-                                            </div>
-                                        </div>
+                <div class="resume-block">
 
-                                        <!--fourth-->
+                    <div class="resume-block__header">
+                        <h4 class="h3">Mutual Trust Bank Limited</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Senior Officer, Digital Banking Division</span> 
+                            <span class="resume-block__header-date">
+                                July 2021 - June 2023
+                            </span>
+                        </p>
+                    </div>
 
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="omar-faruk.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">I worked with Mr. Erfan at BRAC Bank Ltd. During my working tenure with him, I found Mr. Erfan very hard working, efficient & having great knowledge in his job dimension. Mr. Erfan has great sense of
-                                                        responsibility & thinks strategically to add value. I wish him all the success in his life.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Md. Omar Faruk</h3>
-                                                        <p>Business Development|Governance|Process Re-Engineering|Digital Transformation|Product|Project Mgt</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                    <span class="resume-block__header-date"></span>
+                    Managed scope, budget, timeline, and end-to-end execution of technology projects
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Coordinated and integrated CBS systems for business stakeholders to achieve efficient solutions
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Constructed comprehensive project plans to bundle requirements with goals and coordinated stakeholders during all project phases
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Monitored project progress continuously with detailed reports on milestones and deliverables
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Proactively identified problems and proposed and implemented solutions to business stakeholders
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Analyzed project budget and provided feedback relating to cost-benefit and return-on-investment standards
 
-                                            </div>
-                                        </div>
+                </div> <!-- end resume-block -->
 
-                                        <!--fifth-->
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="gaus-samdani.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">I rarely come across real talents who stand out like Erfan. I had the pleasure of working with Erfan for one and half year at Brac Bank, collaborating on several project teams. Erfan’s ability to handle
-                                                        multiple projects was exemplary and he worked well under pressure. Erfan posses the unique skill of making seemingly difficult IT issues easy to Finance professionals. As a senior colleague in Brac
-                                                        Bank , Erfan earns my highest recommendation.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Gaus Samdani, ACA</h3>
-                                                        <p>Head of Financial Controls, BRAC Bank Ltd</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                <div class="resume-block">
 
-                                            </div>
-                                        </div>
+                    <div class="resume-block__header">
+                        <h4 class="h3">BRAC Bank Limited</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Senior Officer, CBS Support & Services, Technology Division</span> 
+                            <span class="resume-block__header-date">
+                                May 2019 - June 2021
+                            </span>
+                            <br>
+                            <span>Officer, CBS Support & Services, Technology Division</span> 
+                            <span class="resume-block__header-date">
+                                August 2017 - April 2019
+                            </span>
+                        </p>
+                    </div>
 
-                                        <!--sixth-->
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="ashraful-karim.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">I had the privilege of working with Erfan in Core Banking Application team for more than two and a half year at BRAC Bank Ltd. Erfan is proactive, result oriented, responsible and technically very sound
-                                                        and he is always ready to put all his energy and time to get the job done. He has an exceptional troubleshooting and analytical skill in banking, Oracle / SQL databases and Java oriented platforms.
-                                                        Erfan is a great asset to any company. I highly recommend Erfan Bashar and look forward to work with him in future. Best wishes for his future as always.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Ashraful Karim</h3>
-                                                        <p>Associate Manager, Core Banking Application, Technology Division, BRAC Bank Ltd.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
+                    <span class="resume-block__header-date"></span>
+                    Enhanced existing modules and developed new feature for Finacle Core Banking Application
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Wrote, tested, and debugged codes, stored procedures, views, functions, and ETL processes with SQL/PL-SQL
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Configured API to integrate external applications with the Finacle Core Banking Application using Finacle Integrator
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Analyzed business requirements, designed systems support upgrades and maintenance, and defined problemsolving procedures through interaction with internal customers (up to L2) towards solutions
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Supported business data analysis and developed customized reports for ad-hoc data requests
+                    <br>
+                    <span class="resume-block__header-date"></span>
+                    Collaborated with project managers and business owners for end-to-end analysis, implemented system validations, gathered BRS and SRS, UAT, Post-production verification, documented code, provided reports, performed code review, and peer feedback
 
-                                            </div>
-                                        </div>
+                </div> <!-- end resume-block -->
+            </div>
+        </div> <!-- s-resume__section -->
 
-                                        <!--seventh-->
-                                        <div class="swiper-slide">
-                                            <div class="testi-item">
-                                                <div class="testi-avatar"><img src="imran-khan.jpeg"></div>
-                                                <div class="testimonials-text-before"><i class="fa fa-quote-left"></i></div>
-                                                <div class="testimonials-text">
-                                                    <p style="text-align: justify;">'Outstandingly Efficient' is the phrase that comes to mind when I think about Mr. Erfan. I had the pleasure of working with him at BRAC Bank Ltd., collaborating on several crucial project teams. Erfan’s
-                                                        ability to juggle multiple projects was unlike any I’ve seen before and made a dramatic difference in the productivity level of our team. No matter how complex a situation, he come up with a positive
-                                                        result. He is very talented, well mannered, organised and extremely hard working. Erfan would be an absolute asset to any team.</p>
-                                                    <div class="testimonials-avatar">
-                                                        <h3>Imran Khan</h3>
-                                                        <p>Manager, Core Banking Application at BRAC Bank Limited|Finacle|BankUltimus</p>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials-text-after"><i class="fa fa-quote-right"></i></div>
 
-                                            </div>
-                                        </div>
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Education</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
 
-                                        <!--testi end-->
-                                    </div>
-                                </div>
+                    <div class="resume-block__header">
+                        <h4 class="h3">University of Dhaka</h4>
+                        <p class="resume-block__header-meta">
+                            <span>MBA, Marketing</span> 
+                            <span class="resume-block__header-date">
+                                December 2020
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>Received top marks in the batch for several courses including the final thesis</p>
+
+                </div> <!-- end resume-block -->
+
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">University of Dhaka</h4>
+                        <p class="resume-block__header-meta">
+                            <span>BSc, Computer Science & Engineering</span> 
+                            <span class="resume-block__header-date">
+                                December 2014
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>Received the highest grade for the final thesis and developed various software projects during the graduation period</p>
+
+                </div> <!-- end resume-block -->
+            </div>
+        </div> <!-- s-resume__section -->
+
+
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Skills</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <p class="resume-block__header-meta">Programming Languages</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent75"></div><strong>Java</strong></li>
+                                <li><div class="progress percent85"></div><strong>SQL</strong></li>
+                                <li><div class="progress percent85"></div><strong>PL/SQL</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent75"></div><strong>Javascript</strong></li>
+                                <li><div class="progress percent65"></div><strong>HTML/HTML5</strong></li>
+                                <li><div class="progress percent65"></div><strong>CSS/CSS3</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+                <p class="resume-block__header-meta">DBMS</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent90"></div><strong>Oracle DB</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent80"></div><strong>MySQL</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+                <p class="resume-block__header-meta">Frameworks</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent80"></div><strong>Bootstrap</strong></li>
+                                <li><div class="progress percent60"></div><strong>SpringBoot</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent60"></div><strong>Hibernate</strong></li>
+                                <li><div class="progress percent60"></div><strong>Lombok</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+                <p class="resume-block__header-meta">API Development & Testing</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent80"></div><strong>REST</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent60"></div><strong>Postman</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+                <p class="resume-block__header-meta">VCS & Code Repo</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent70"></div><strong>GIT</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent70"></div><strong>GITHUB</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+                <p class="resume-block__header-meta">Technical Writing & Documentation</p>
+                <div class="row">
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent80"></div><strong>Test Cases & BRD</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                    <div class="column large-6 tab-12">
+                        <div class="resume-block">
+                            <ul class="skill-bars-fat">
+                                <li><div class="progress percent80"></div><strong>SRS, SOW, SOP</strong></li>
+                            </ul>
+                        </div> <!-- end resume-block -->
+                    </div>
+                </div>
+            </div>
+        </div> <!-- s-resume__section -->
+
+    </section> <!-- end s-resume -->
+
+
+    <!-- portfolio
+    ================================================== -->
+    
+
+    <!-- testimonials
+    ================================================== -->
+    <section id="testimonials" class="s-testimonials target-section">
+
+        <div class="s-testimonials__bg"></div>
+
+        <div class="row s-testimonials__header">
+            <div class="column large-12">
+                <h3>Hear What Industry Experts Says About Me</h3>
+            </div>
+        </div>
+
+        <div class="row s-testimonials__content">
+
+            <div class="column">
+
+                <div class="swiper-container testimonial-slider">
+
+                    <div class="swiper-wrapper">
+
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Imran Khan</strong>
+                                    <span>Senior Manager, Core Banking Application at BRAC Bank PLC</span>
+                                </cite>
                             </div>
-                        </div>
-                        <div class="tc-pagination" style="text-align: center !important;"></div>
-                    </section>
+                            <p>
+                                'Outstandingly Efficient' is the phrase that comes to mind when I think about Mr. Erfan.
+                                I had the pleasure of working with him at BRAC Bank Ltd., collaborating on several crucial project teams. Erfan’s ability to juggle multiple projects was unlike any I’ve seen before and made a dramatic difference in the productivity level of our team. No matter how complex a situation, he come up with a positive result. He is very talented, well mannered, organised and extremely hard working. Erfan would be an absolute asset to any team
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
+        
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>MD. Nazmul Ahsan</strong>
+                                    <span>Digital Transformation Expert & Innovation Strategist</span>
+                                </cite>
+                            </div>
+                            <p>
+                                Erfan holds extensive skills in developing technical features of Core Banking Applications. He also played a key role in several technology projects related to financial solutions. His ability to sense the significance of responsibilities and deliver accordingly is exemplary. I saw him working on multiple projects at the same time pretty efficiently
+                            </p>
 
-                    <!-- testimonial section -->
+                        </div> <!-- end testimonial-slider__slide -->
+        
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>MD. Zia Sajid</strong>
+                                    <span>Growth Hacker & Senior Project Manager</span>
+                                </cite>
+                            </div>
+                            <p>
+                                Erfan is the name of the most dependable resource in the banking industry. He has developed himself as Core Banking Professional. He contains control over the database and software engineering. As a human, it's always fun to work with, dedicated, and keen to meet the timeline. The problem-solving and customer-centric mentality is his best personal attribute. He is such kind of resource every organization wants. Wish him every success in life.
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
 
-                </div>
-                <hr>
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>MD. Rashed Azad Chowdhury, PMP</strong>
+                                    <span>PMP, Google®PM, and Scrum Practitioner</span>
+                                </cite>
+                            </div>
+                            <p>
+                                It was my pleasure working with Mr. Erfan Bashar at BRAC Bank Limited. He is a key player for Core Banking Application. Being a Project Manager I was always in the comfort zone in any situation working with him. I wish him all the best in his upcoming careers.
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
 
-                <!--CONTACT SECTION-->
-                <div id="contact" class="w3-container w3-margin-top-10-percent w3-cursive reveal">
-                </div>
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Gaus Samdani, FCA</strong>
+                                    <span>Head of Financial Controls, BRAC Bank PLC</span>
+                                </cite>
+                            </div>
+                            <p>
+                                I rarely come across real talents who stand out like Erfan. I had the pleasure of working with Erfan for one and half year at Brac Bank, collaborating on several project teams. Erfan’s ability to handle multiple projects was exemplary and he worked well under pressure. Erfan posses the unique skill of making seemingly difficult IT issues easy to Finance professionals. As a senior colleague in Brac Bank , Erfan earns my highest recommendation.
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
+
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-07.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>MD. Omar Faruk</strong>
+                                    <span>Process Re-Engineering & Product Analyst</span>
+                                </cite>
+                            </div>
+                            <p>
+                                I worked with Mr. Erfan at BRAC Bank Ltd. During my working tenure with him, I found Mr. Erfan very hard working, efficient & having great knowledge in his job dimension. Mr. Erfan has great sense of responsibility & thinks strategically to add value. I wish him all the success in his life
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
+
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-08.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Ashraful Karim</strong>
+                                    <span>Associate Manager, Core Banking Application at BRAC Bank PLC</span>
+                                </cite>
+                            </div>
+                            <p>
+                                I had the privilege of working with Erfan in Core Banking Application team for more than two and a half year at BRAC Bank Ltd. Erfan is proactive, result oriented, responsible and technically very sound and he is always ready to put all his energy and time to get the job done. He has an exceptional troubleshooting and analytical skill in banking, Oracle / SQL databases and Java oriented platforms. Erfan is a great asset to any company. I highly recommend Erfan Bashar and look forward to work with him in future. Best wishes for his future as always
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
+    
+                    </div> <!-- end testimonial slider swiper-wrapper -->
+
+                    <div class="swiper-pagination"></div>
+
+                </div> <!-- end swiper-container -->
+
+            </div> <!-- end column -->
+
+        </div> <!-- end row -->
+
+    </section> <!-- end s-testimonials -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+        <div class="row s-contact__header">
+            <div class="column large-12">
+                <h3 class="section-header-allcaps">Say Hello</h3>
+            </div>
+        </div>
+
+        <div class="row s-contact__content">
+
+            <div class="column large-7 medium-12">
+
+                <h4 class="huge-text">
+                Have a new idea in mind? Let's collaborate and have a cofee :)
+                </h4>
+
             </div>
 
-            <!--FOOTER-->
-            <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-            <footer class="w3-container w3-border-top w3-center w3-margin-top-3">
-                <p>© 2022 - Erfan Bashar</p>
-                <!-- End footer -->
-            </footer>
+            <div class="column large-4 medium-12">
 
-            <!--END OF CV SECTION-->
-        </section>
-    </section>
-    <script>
-        // Script to load feather icons
-        feather.replace()
-    </script>
+                <div class="row contact-infos">
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header">
+                                Email
+                            </h5>
+                            <p class="contact-block__content">
+                                <a class="mailtoui" href="mailto:sayhello@ceevee.com">erfan.bashar.13@gmail.com</a>
+                            </p>
+                        </div> <!-- end contact-block -->
+                    </div>
+                    <div class="column large-12 medium-6 tab-12" id="phone"></div>
+
+                    <div class="column large-12">
+                        <a href="mailto:sayhello@ceevee.com" class="mailtoui btn btn--primary h-full-width">Let's Talk</a>
+                    </div>
+                </div> <!-- end contact-infos -->
+
+            </div>
+        </div> <!-- s-contact__content -->
+
+    </section> <!-- end s-contact -->
+    
+
+    <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+        <div class="row">
+            <div class="column large-4 medium-6 w-1000-stack s-footer__social-block">
+                <ul class="s-footer__social">
+                    <li><a href="https://www.linkedin.com/in/erfanbashar/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="https://github.com/erfanbashar" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://stackoverflow.com/users/2305431/erfan-bashar" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/erfan.bashar.7/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/erfanbashar13/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="column large-7 medium-6 w-1000-stack ss-copyright">
+                <span>© Copyright Erfan Bashar</span> 
+                <span>Design by <a href="#">Erfan Bashar</a></span>
+            </div>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"/></svg>
+             </a>
+        </div> <!-- end ss-go-top -->
+    </footer>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>

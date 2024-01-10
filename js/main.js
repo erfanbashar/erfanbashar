@@ -1,431 +1,442 @@
-function reveal() {
-    let reveals = document.querySelectorAll(".reveal");
 
-    for (let i = 0; i < reveals.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
-        let elementVisible = 150;
+/* ===================================================================
+ * Main JS
+ *
+ * ------------------------------------------------------------------- */
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        } else {
-            reveals[i].classList.remove("active");
-        }
-    }
-}
+(function(html) {
 
-window.addEventListener("scroll", reveal);
-
-function onLoad() {
-    loadText();
-    fetchCv();
-}
-
-function loadText() {
-    loadName();
-    loadAboutText();
-    loadPortfolio();
-    loadCertificates();
-    loadEducations();
-    loadTestimonial();
-    loadContactDetails();
-}
-
-function loadName() {
-    let nameText = document.createElement("p");
-    nameText.id = "nameText";
-    nameText.style.fontStyle = "italic";
-    nameText.style.fontSize = "xx-large";
-    nameText.textContent = "A M A Erfan Bashar";
-    document.querySelector("#home").appendChild(nameText);
-
-    loadHomeText();
-}
-
-function loadAboutText() {
-    let aboutText = document.createElement("p");
-    aboutText.id = "aboutText";
-    aboutText.style.textAlign = "justify";
-    aboutText.className = "w3-margin-top-2";
-    aboutText.textContent = "A focused, quick-learning tech solutionist in the FinTech industry with more than 6 years of experience in the development, customization, support, and manage enterprise applications. Expertise in CBS application solutions with expertise in working with Java web-based technologies and managing several technology projects in agile environments. Confident communicator and strategic thinker to build scalable software customizable to meet organizational needs";
-
-    let aboutHeader = document.createElement("h2");
-    aboutHeader.className = "w3-border-bottom w3-border-amber";
-    aboutHeader.setAttribute('style', 'border-width: 3px !important');
-    aboutHeader.textContent = "ABOUT";
-
-    document.querySelector("#about").appendChild(aboutHeader);
-    document.querySelector("#about").appendChild(aboutText);
-}
-
-function loadPortfolio() {
-
-    let portfolioHeader = document.createElement("h2");
-    portfolioHeader.className = "w3-border-bottom w3-border-amber";
-    portfolioHeader.setAttribute('style', 'border-width: 3px !important');
-    portfolioHeader.textContent = "PORTFOLIO";
-    document.querySelector("#portfolio").appendChild(portfolioHeader);
-    loadEmploymentHistory();
-}
-
-function loadCertificates() {
-
-    let header = document.createElement("h3");
-    header.className = "w3-border-amber";
-    header.textContent = "CERTIFICATION & TRAINING";
-    document.querySelector("#certificate").appendChild(header);
-
-    let ul1 = createList();
-    document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified SQL Developer"));
-    ul1.appendChild(createMenuItem("Certified by Oracle University"));
-    document.querySelector("#certificate").appendChild(ul1);
-
-    let ul2 = createList();
-    document.querySelector("#certificate").appendChild(createSubheader("Java Enterprise Edition with Spring Framework"));
-    ul2.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));
-    document.querySelector("#certificate").appendChild(ul2);
-
-    let ul3 = createList();
-    document.querySelector("#certificate").appendChild(createSubheader("Oracle Certified Java Associate"));
-    ul3.appendChild(createMenuItem("Trained from IBCS-PRIMAX Software (Bangladesh) Limited"));
-    document.querySelector("#certificate").appendChild(ul3);
-
-}
-
-function loadEducations() {
-
-    let header = document.createElement("h3");
-    header.className = "w3-border-amber";
-    header.textContent = "EDUCATIONAL QUALIFICATIONS";
-    document.querySelector("#educations").appendChild(header);
-
-    document.querySelector("#educations").appendChild(createSubheader("Master of Business Administration"));
-    let ul1 = createList();
-    ul1.appendChild(createMenuItem("Department of Marketing, University of Dhaka"));
-    ul1.appendChild(createMenuItem("April 2017 - December 2020"));
-    document.querySelector("#educations").appendChild(ul1);
-
-    document.querySelector("#educations").appendChild(createSubheader("Bachelor in Science"));
-    let ul2 = createList();
-    ul2.appendChild(createMenuItem("Department of Computer Science & Engineering, University of Dhaka"));
-    ul2.appendChild(createMenuItem("January 2011 - December 2014"));
-    document.querySelector("#educations").appendChild(ul2);
-
-    document.querySelector("#educations").appendChild(createSubheader("Higher Secondary School Certificate"));
-    let ul3 = createList();
-    ul3.appendChild(createMenuItem("Notre Dame College"));
-    ul3.appendChild(createMenuItem("2010"));
-    document.querySelector("#educations").appendChild(ul3);
-
-    document.querySelector("#educations").appendChild(createSubheader("Secondary School Certificate"));
-    let ul4 = createList();
-    ul4.appendChild(createMenuItem("Udayan School & College"));
-    ul4.appendChild(createMenuItem("2008"));
-    document.querySelector("#educations").appendChild(ul4);
-}
-
-function createList() {
-    let ul = document.createElement("ul");
-    ul.className = "w3-ul";
-    ul.style.fontWeight = "600";
-
-    return ul;
-}
-
-function createSubheader(subHeader) {
-    let h4 = document.createElement("h4");
-    h4.textContent = subHeader;
-    return h4;
-}
-
-function loadHomeText() {
-
-    let homeText = document.createElement("p");
-    homeText.textContent = "CBS Developer & FinTech Solutionist|Oracle Certified for SQL|Java, Javascript & PL/SQL Developer|Love Football & Anyplace Around A Sea|";
-    let homeTextArray = homeText.textContent.split("|");
-    let part = 0;
-    let partIndex = 0;
-    let interval;
-    let textDiv = document.createElement("div");
-    textDiv.id = "text";
-    let cursorDiv = document.createElement("div");
-    cursorDiv.id = "cursor";
-    document.querySelector("#home").appendChild(textDiv);
-    document.querySelector("#home").appendChild(cursorDiv);
-
-    let element = document.querySelector("#text");
-    let cursor = document.querySelector("#cursor");
-
-    function Type() {
-        let text = homeTextArray[part].substring(0, partIndex + 1);
-        element.innerHTML = text;
-        partIndex++;
-
-        if (text === homeTextArray[part]) {
-            cursor.style.display = "none";
-            clearInterval(interval);
-            setTimeout(function() {
-                interval = setInterval(Delete, 50);
-            }, 1000);
-        }
-    }
-
-    function Delete() {
-        let text = homeTextArray[part].substring(0, partIndex - 1);
-        element.innerHTML = text;
-        partIndex--;
-
-        if (text === '') {
-            clearInterval(interval);
-            if (part == (homeTextArray.length - 1)) {
-                part = 0;
-            } else {
-                part++;
-            }
-            partIndex = 0;
-
-            setTimeout(function() {
-                cursor.style.display = "inline-block";
-                interval = setInterval(Type, 100);
-            }, 200);
-        }
-    }
-
-    interval = setInterval(Type, 100);
-}
-
-function loadEmploymentHistory() {
-
-    let mainDiv = document.createElement("div");
-    mainDiv.className = "w3-container w3-margin-top-2 w3-cursive";
-    mainDiv.id = "employment-history";
-
-    let empHisHeader = document.createElement("h3");
-    empHisHeader.className = "w3-border-amber";
-    empHisHeader.textContent = "EMPLOYMENT HISTORY";
-    mainDiv.appendChild(empHisHeader);
-    let div = document.createElement("div");
-
-    getNagadExperience(div);
-    getMtbExperience(div);
-    getBblExperience(div);
-    
-    mainDiv.appendChild(div);
-
-    document.querySelector("#portfolio").appendChild(mainDiv);
-}
-
-function getNagadExperience(div) {
-    let organizationName = document.createElement("h4");
-    organizationName.innerHTML = '<span style="color: orange;">CBS Integration & Projects</span>' + ' | Nagad Limited';
-    div.appendChild(organizationName);
-
-    let designation = document.createElement("h4");
-    designation.innerHTML = '<span style="color: orange;">Lead Engineer</span>' + ' | June 2023 - Present';
-
-    div.appendChild(designation);
-
-    let jobDescription = document.createElement("ul");
-    jobDescription.className = "w3-ul";
-    jobDescription.style.fontWeight = "500";
-    jobDescription.style.textAlign = "justify";
-    jobDescription.appendChild(createMenuItem("Designing overall solution architecture and implementation plan for CBS implementation."));
-    jobDescription.appendChild(createMenuItem("Identifying, tracking and reviewing CBS deliverables with efficient and quality code based on given specifications."));
-    jobDescription.appendChild(createMenuItem("Developing, fixing, and improving CBS functionalities according to Business / System requirement."));
-    jobDescription.appendChild(createMenuItem("Ensuring patch deployment planning and delivery of system integration."));
-    jobDescription.appendChild(createMenuItem("Providing technical support and expertise advice throughout all technical-functional CBS features."));
-    jobDescription.appendChild(createMenuItem("Identifying, defining and coordinating development activities for Change Request of CBS project."));
-    div.appendChild(jobDescription);
-}
-
-function getMtbExperience(div) {
-    let organizationName = document.createElement("h4");
-    organizationName.innerHTML = '<span style="color: orange;">Digital Banking Division</span>' + ' | Mutual Trust Bank Limited';
-    div.appendChild(organizationName);
-
-    let designation = document.createElement("h4");
-    designation.innerHTML = '<span style="color: orange;">Senior Officer</span>' + ' | July 2021 - June 2023';
-    div.appendChild(designation);
-
-    let jobDescription = document.createElement("ul");
-    jobDescription.className = "w3-ul";
-    jobDescription.style.fontWeight = "500";
-    jobDescription.style.textAlign = "justify";
-    jobDescription.appendChild(createMenuItem("Managed scope, budget, timeline, and end-to-end execution of technology projects"));
-    jobDescription.appendChild(createMenuItem("Coordinated and integrated CBS systems for business stakeholders to achieve efficient solutions."));
-    jobDescription.appendChild(createMenuItem("Constructed comprehensive project plans to bundle requirements with goals, and coordinated stakeholders during all project phases"));
-    jobDescription.appendChild(createMenuItem("Monitored project progress continuously and developed detailed reports on milestones and deliverables"));
-    jobDescription.appendChild(createMenuItem("Proactively identified problems, and proposed and implemented solutions to business stakeholders."));
-    jobDescription.appendChild(createMenuItem("Analyzed projects budget and provided feedback relating to cost-benefit and return-on-investment standards"));
-
-    div.appendChild(jobDescription);
-}
-
-function getBblExperience(div) {
-    let organizationName = document.createElement("h4");
-    organizationName.innerHTML = '<span style="color: orange;">Technology Division</span>' + ' | BRAC Bank Limited';
-    div.appendChild(organizationName);
-
-    let designation = document.createElement("h4");
-    designation.innerHTML = '<span style="color: orange;">Senior Officer</span>' + ' | May 2019 - June 2021';
-
-    div.appendChild(designation);
-
-    designation = document.createElement("h4");
-    designation.innerHTML = '<span style="color: orange;">Officer</span>' + ' | August 2017 - April 2019';
-    div.appendChild(designation);
-
-    let jobDescription = document.createElement("ul");
-    jobDescription.className = "w3-ul";
-    jobDescription.style.fontWeight = "500";
-    jobDescription.style.textAlign = "justify";
-    jobDescription.appendChild(createMenuItem("Enhanced existing modules and developed new features of the Core Banking Application - Finacle."));
-    jobDescription.appendChild(createMenuItem("Wrote, tested, and debugged codes, stored procedures, views, functions, ETL processes with SQL/PL-SQL"));
-    jobDescription.appendChild(createMenuItem("Configured API to integrate external applications with the Core Banking Application - Finacle"));
-    jobDescription.appendChild(createMenuItem("Analyzed business requirements, designed systems support upgrades and maintenance, and defined problem-solving procedures through interaction with internal customers (up to L2) towards solutions."));
-    jobDescription.appendChild(createMenuItem("Supported business data analysis and developed customized reports for ad-hoc data requests."));
-    jobDescription.appendChild(createMenuItem("Collaborated with project managers and businesses owners for end-to-end analysis, implemented system validations, gathered BRS and SRS, UAT, Post-production verification, documented code, provided reports, performed code review, and peer feedback"));
-    div.appendChild(jobDescription);
-}
-
-function createMenuItem(name) {
-    let li = document.createElement("li");
-    li.textContent = name;
-    return li;
-}
-
-function toggleNavigation() {
-    let nav = document.getElementById("mobile-nav");
-    if (nav.classList.contains('w3-show')) {
-        nav.classList.remove('w3-show');
-    } else {
-        nav.classList.add('w3-show');
-    }
-}
-
-function getLinkedin() {
-    let linkedin = document.querySelector("#linkedin");
-    linkedin.href = "https://www.linkedin.com/in/erfanbashar/";
-}
-
-function getGithub() {
-    let github = document.querySelector("#github");
-    github.href = "https://github.com/erfanbashar";
-}
-
-function getFacebook() {
-    let facebook = document.querySelector("#facebook");
-    facebook.href = "https://www.facebook.com/erfan.bashar.7/";
-}
-
-function getInstagram() {
-    let instagram = document.querySelector("#instagram");
-    instagram.href = "https://www.instagram.com/erfanbashar13/";
-}
-
-function fetchCv() {
-    fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
-    .then((response) => response.json())
-    .then((jsonResponse) => {
-        const respCountry = jsonResponse.country;
-        getCv(respCountry);
-    });
-}
-
-function getCv(respCountry) {
-
-    let cv = document.querySelector("#cv");
-    // alert(respCountry);
-    if(respCountry == 'BD') {
-        cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=drive_link";
-    }
-    else {
-        cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=drive_link";
-    }
-}
-
-function loadContactDetails() {
-    let contactHeader = document.createElement("h2");
-    contactHeader.className = "w3-border-bottom w3-border-amber";
-    contactHeader.setAttribute('style', 'border-width: 3px !important');
-    contactHeader.textContent = "CONTACT DETAILS";
-    document.querySelector("#contact").appendChild(contactHeader);
-
-    let contactSubDiv = document.createElement("div");
-    contactSubDiv.id = "contactSubDiv";
-    contactSubDiv.className = "w3-margin-top-2";
-    contactSubDiv.setAttribute('style', 'font-weight: 500');
-
-    fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
-    .then((response) => response.json())
-    .then((jsonResponse) => {
-        const respCountry = jsonResponse.country;
-        
-        if(respCountry == 'BD') {
-            let ul1 = createList();
-            ul1.appendChild(createMenuItem("Adress: House 6, Road 5, Dhanmondi, Dhaka-1205, Bangladesh"));
-            ul1.appendChild(createMenuItem("Phone number: +8801700714540"));
-            ul1.appendChild(createMenuItem("E-mail: erfan.bashar.13@gmail.com"));
-            contactSubDiv.appendChild(ul1);
-            
-        }
-        else {
-            let ul1 = createList();
-            ul1.appendChild(createMenuItem("Mississauga, Toronto, Canada"));
-            ul1.appendChild(createMenuItem("E-mail: erfan.bashar.13@gmail.com"));
-            contactSubDiv.appendChild(ul1);
-        }
-    });
-
-    document.querySelector("#contact").appendChild(contactSubDiv);
-}
-
-// testimonial section
-
-function loadTestimonial() {
     "use strict";
+    
+    html.className = html.className.replace(/\bno-js\b/g, '') + ' js ';
 
-    if ($(".testimonials-carousel").length > 0) {
-        let j2 = new Swiper(".testimonials-carousel .swiper-container", {
-            preloadImages: false,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            grabCursor: true,
-            mousewheel: false,
-            centeredSlides: true,
-            pagination: {
-                el: '.tc-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.listing-carousel-button-next',
-                prevEl: '.listing-carousel-button-prev',
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 1,
-                },
+   /* Preloader
+    * -------------------------------------------------- */
+    const ssPreloader = function() {
 
+        const preloader = document.querySelector('#preloader');
+        if (!preloader) return;
+
+        window.addEventListener('load', function() {
+            
+            document.querySelector('body').classList.remove('ss-preload');
+            document.querySelector('body').classList.add('ss-loaded');
+
+            preloader.addEventListener('transitionend', function(e) {
+                if (e.target.matches("#preloader")) {
+                    this.style.display = 'none';
+                }
+            });
+
+        });
+
+        // force page scroll position to top at page refresh
+        // window.addEventListener('beforeunload' , function () {
+        //     window.scrollTo(0, 0);
+        // });
+
+    }; // end ssPreloader
+
+    /* start createMenuItem
+    * -------------------------------------------------- */
+
+    const createMenuItem = function (name) {
+        let li = document.createElement("li");
+        li.textContent = name;
+        return li;
+    };
+
+    /* end createMenuItem
+    * -------------------------------------------------- */
+
+    /* start ssContactLoader
+    * -------------------------------------------------- */
+    const ssContactLoader = function() {
+
+        let preloader = document.querySelector(".row .s-about__content-bottom");
+        // if (!preloader) return;
+
+        let contactDiv = document.createElement("div");
+        contactDiv.className = "column w-1000-stack";
+        preloader.appendChild(contactDiv);
+
+        let contactHeader = document.createElement("h3");
+        contactHeader.textContent = "Contact Details";
+        contactDiv.appendChild(contactHeader);
+
+        let list = document.createElement("ul");
+        list.setAttribute('style', 'list-style-type: none; margin: 0; padding: 0;');
+        list.appendChild(createMenuItem("A M A Erfan Bashar"));
+
+        fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            const respCountry = jsonResponse.country;
+            let cv = document.querySelector("#cv");
+            if(respCountry == 'BD') {
+                list.appendChild(createMenuItem("Dhaka, Bangladesh"));
+                
+                let contactPhoneList = document.createElement("li");
+                let contactPhone = document.createElement("a");
+                contactPhone.href = "tel:+8801700714540";
+                contactPhone.textContent = "+880-1700-714540";
+                contactPhoneList.appendChild(contactPhone);
+                list.appendChild(contactPhoneList);
+
+                let contactEmailList = document.createElement("li");
+                let contactEmail = document.createElement("a");
+                contactEmail.href = "mailto:#0";
+                contactEmail.textContent = "erfan.bashar.13@gmail.com";
+                contactEmailList.appendChild(contactEmail);
+                list.appendChild(contactEmailList);
+
+                contactDiv.appendChild(list);
+
+                cv.href = "https://drive.google.com/file/d/12GfKbB0WbOGeLXNHz8Vu0uYfwUXXxkY8/view?usp=drive_link";
+            }
+            else {
+                list.appendChild(createMenuItem("Mississauga, Ontario, Canada"));
+                
+                let contactPhoneList = document.createElement("li");
+                let contactPhone = document.createElement("a");
+                contactPhone.href = "tel:+16046182296";
+                contactPhone.textContent = "+1 (604) 6182296";
+                contactPhoneList.appendChild(contactPhone);
+                list.appendChild(contactPhoneList);
+
+                let contactEmailList = document.createElement("li");
+                let contactEmail = document.createElement("a");
+                contactEmail.href = "mailto:#0";
+                contactEmail.textContent = "erfan.bashar.13@gmail.com";
+                contactEmailList.appendChild(contactEmail);
+                list.appendChild(contactEmailList);
+
+                contactDiv.appendChild(list);
+
+                cv.href = "https://drive.google.com/file/d/1AsJhjHsWW67U3DXu2Vup-XMm_TEn5KFg/view?usp=drive_link";
             }
         });
-    }
 
-    // bubbles -----------------
+    }; // end ssContactLoader
 
+    /* start ssMobileLoader
+    * -------------------------------------------------- */
+    const ssMobileLoader = function() {
 
-    setInterval(function() {
-        let size = randomValue(sArray);
-        $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
-        $('.individual-bubble').animate({
-            'bottom': '100%',
-            'opacity': '-=0.7'
-        }, 4000, function() {
-            $(this).remove()
+        let preloader = document.querySelector("#phone");
+        // if (!preloader) return;
+
+        let phoneDiv = document.createElement("div");
+        phoneDiv.className = "contact-block";
+        preloader.appendChild(phoneDiv);
+
+        let phoneHeader = document.createElement("h5");
+        phoneHeader.className = "contact-block__header";
+        phoneHeader.textContent = "Phone";
+        phoneDiv.appendChild(phoneHeader);
+
+        let phoneLine = document.createElement("p");
+        phoneLine.className = "contact-block__content";
+        let phoneLink = document.createElement("a");
+
+        fetch("https://ipinfo.io/json?token=8d1dda29c0e932")
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            const respCountry = jsonResponse.country;
+            if(respCountry == 'BD') {
+                phoneLink.href = "tel:+8801700714540";
+                phoneLink.textContent = "+880-1700-714540";
+
+                phoneLine.appendChild(phoneLink);
+            }
+            else {
+                phoneLink.href = "tel:+16046182296";
+                phoneLink.textContent = "+1 (604) 6182296";
+
+                phoneLine.appendChild(phoneLink);
+            }
         });
-    }, 350);
 
-}
+        phoneDiv.appendChild(phoneLine);
 
-// testimonial section
+    }; // end ssMobileLoader
+
+   /* Parallax
+    * -------------------------------------------------- */
+    const ssParallax = function() { 
+
+        const rellax = new Rellax('.rellax');
+
+    }; // end ssParallax
+
+
+   /* Move header menu
+    * -------------------------------------------------- */
+    const ssMoveHeader = function () {
+
+        const hdr = document.querySelector('.s-header');
+        const hero = document.querySelector('#hero');
+        let triggerHeight;
+
+        if (!(hdr && hero)) return;
+
+        setTimeout(function(){
+            triggerHeight = hero.offsetHeight - 170;
+        }, 300);
+
+        window.addEventListener('scroll', function () {
+
+            let loc = window.scrollY;
+           
+
+            if (loc > triggerHeight) {
+                hdr.classList.add('sticky');
+            } else {
+                hdr.classList.remove('sticky');
+            }
+
+            if (loc > triggerHeight + 20) {
+                hdr.classList.add('offset');
+            } else {
+                hdr.classList.remove('offset');
+            }
+
+            if (loc > triggerHeight + 150) {
+                hdr.classList.add('scrolling');
+            } else {
+                hdr.classList.remove('scrolling');
+            }
+
+        });
+
+    }; // end ssMoveHeader
+
+
+   /* Mobile Menu
+    * ---------------------------------------------------- */ 
+    const ssMobileMenu = function() {
+
+        const toggleButton = document.querySelector('.s-header__menu-toggle');
+        const headerNavWrap = document.querySelector('.s-header__nav-wrap');
+        const siteBody = document.querySelector("body");
+
+        if (!(toggleButton && headerNavWrap)) return;
+
+        toggleButton.addEventListener('click', function(event){
+            event.preventDefault();
+            toggleButton.classList.toggle('is-clicked');
+            siteBody.classList.toggle('menu-is-open');
+        });
+
+        headerNavWrap.querySelectorAll('.s-header__nav a').forEach(function(link) {
+            link.addEventListener("click", function(evt) {
+
+                // at 800px and below
+                if (window.matchMedia('(max-width: 800px)').matches) {
+                    toggleButton.classList.toggle('is-clicked');
+                    siteBody.classList.toggle('menu-is-open');
+                }
+            });
+        });
+
+        window.addEventListener('resize', function() {
+
+            // above 800px
+            if (window.matchMedia('(min-width: 801px)').matches) {
+                if (siteBody.classList.contains('menu-is-open')) siteBody.classList.remove('menu-is-open');
+                if (toggleButton.classList.contains("is-clicked")) toggleButton.classList.remove("is-clicked");
+            }
+        });
+
+    }; // end ssMobileMenu
+
+
+   /* Highlight active menu link on pagescroll
+    * ------------------------------------------------------ */
+    const ssScrollSpy = function() {
+
+        const sections = document.querySelectorAll(".target-section");
+
+        // Add an event listener listening for scroll
+        window.addEventListener("scroll", navHighlight);
+
+        function navHighlight() {
+        
+            // Get current scroll position
+            let scrollY = window.pageYOffset;
+        
+            // Loop through sections to get height(including padding and border), 
+            // top and ID values for each
+            sections.forEach(function(current) {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 50;
+                const sectionId = current.getAttribute("id");
+            
+               /* If our current scroll position enters the space where current section 
+                * on screen is, add .current class to parent element(li) of the thecorresponding 
+                * navigation link, else remove it. To know which link is active, we use 
+                * sectionId variable we are getting while looping through sections as 
+                * an selector
+                */
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.add("current");
+                } else {
+                    document.querySelector(".s-header__nav a[href*=" + sectionId + "]").parentNode.classList.remove("current");
+                }
+            });
+        }
+
+    }; // end ssScrollSpy
+
+
+   /* Swiper
+    * ------------------------------------------------------ */ 
+    const ssSwiper = function() {
+
+        const mySwiper = new Swiper('.swiper-container', {
+
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },          
+            breakpoints: {
+                // when window width is >= 401px
+                401: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 801px
+                801: {
+                    slidesPerView: 2,
+                    spaceBetween: 48
+                }
+            }
+         });
+
+    }; // end ssSwiper
+
+
+   /* Lightbox
+    * ------------------------------------------------------ */
+    const ssLightbox = function() {
+
+        const folioLinks = document.querySelectorAll('.folio-item a');
+        const modals = [];
+
+        folioLinks.forEach(function(link) {
+            let modalbox = link.getAttribute('href');
+            let instance = basicLightbox.create(
+                document.querySelector(modalbox),
+                {
+                    onShow: function(instance) {
+                        //detect Escape key press
+                        document.addEventListener("keydown", function(evt) {
+                            evt = evt || window.event;
+                            if(evt.keyCode === 27){
+                            instance.close();
+                            }
+                        });
+                    }
+                }
+            )
+            modals.push(instance);
+        });
+
+        folioLinks.forEach(function(link, index) {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                modals[index].show();
+            });
+        });
+
+    };  // end ssLightbox
+
+
+   /* Alert boxes
+    * ------------------------------------------------------ */
+    const ssAlertBoxes = function() {
+
+        const boxes = document.querySelectorAll('.alert-box');
+  
+        boxes.forEach(function(box) {
+
+            box.addEventListener('click', function(e){
+                if (e.target.matches(".alert-box__close")) {
+                    e.stopPropagation();
+                    e.target.parentElement.classList.add("hideit");
+
+                    setTimeout(function() {
+                        box.style.display = "none";
+                    }, 500)
+                }    
+            });
+
+        })
+
+    }; // end ssAlertBoxes
+
+
+   /* Smoothscroll
+    * ------------------------------------------------------ */
+    const ssSmoothScroll = function () {
+        
+        const triggers = document.querySelectorAll(".smoothscroll");
+
+        triggers.forEach(function(trigger) {
+            trigger.addEventListener("click", function() {
+                const target = trigger.getAttribute("href");
+
+                Jump(target, {
+                    duration: 1200,
+                });
+            });
+        });
+
+    }; // end ssSmoothScroll
+
+
+   /* back to top
+    * ------------------------------------------------------ */
+    const ssBackToTop = function() {
+
+        const pxShow = 900;
+        const goTopButton = document.querySelector(".ss-go-top");
+
+        if (!goTopButton) return;
+
+        // Show or hide the button
+        if (window.scrollY >= pxShow) goTopButton.classList.add("link-is-visible");
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= pxShow) {
+                if(!goTopButton.classList.contains('link-is-visible')) goTopButton.classList.add("link-is-visible")
+            } else {
+                goTopButton.classList.remove("link-is-visible")
+            }
+        });
+
+    }; // end ssBackToTop
+
+
+
+   /* initialize
+    * ------------------------------------------------------ */
+    (function ssInit() {
+
+        ssPreloader();
+        ssContactLoader();
+        ssMobileLoader();
+        ssParallax();
+        ssMoveHeader();
+        ssMobileMenu();
+        ssScrollSpy();
+        ssSwiper();
+        ssLightbox();
+        ssAlertBoxes();
+        ssSmoothScroll();
+        ssBackToTop();
+
+    })();
+
+})(document.documentElement);
