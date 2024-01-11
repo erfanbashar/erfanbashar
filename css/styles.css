@@ -3781,6 +3781,7 @@ input[type="button"].btn--primary:focus {
         width: var(--vspace-6);
         height: var(--vspace-6);
         border-width: 1.2rem;
+        margin-left: 25%;
     }
 }
 
