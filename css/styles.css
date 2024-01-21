@@ -21,6 +21,10 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+.smoothscroll:hover {
+    color: #C04000;
+}
+
 .row-card h4 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -639,6 +643,10 @@ details {
 
 summary {
     display: list-item;
+}
+
+.typewrite {
+    font-weight: bold;
 }
 
 /* ------------------------------------------------------------------- 
