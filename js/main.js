@@ -146,8 +146,8 @@
                 
                 let contactPhoneList = document.createElement("li");
                 let contactPhone = document.createElement("a");
-                contactPhone.href = "tel:+16046182296";
-                contactPhone.textContent = "+1 (604) 6182296";
+                contactPhone.href = "tel:+16475496438";
+                contactPhone.textContent = "+1 (647) 549 6438";
                 contactPhoneList.appendChild(contactPhone);
                 list.appendChild(contactPhoneList);
 
@@ -197,8 +197,8 @@
                 phoneLine.appendChild(phoneLink);
             }
             else {
-                phoneLink.href = "tel:+16046182296";
-                phoneLink.textContent = "+1 (604) 6182296";
+                phoneLink.href = "tel:+16475496438";
+                phoneLink.textContent = "+1 (647) 549 6438";
 
                 phoneLine.appendChild(phoneLink);
             }
