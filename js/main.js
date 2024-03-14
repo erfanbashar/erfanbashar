@@ -160,7 +160,7 @@
 
                 contactDiv.appendChild(list);
 
-                cv.href = "https://drive.google.com/file/d/1B61wfX7QKzlZEC8US6FAazH0Dr10e5LQ/view?usp=sharing";
+                cv.href = "https://drive.google.com/file/d/1dGlaXtMmy9cucZ2iqAkzNrAoBIN6CoG5/view?usp=sharing";
             }
         });
 
