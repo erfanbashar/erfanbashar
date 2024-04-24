@@ -139,7 +139,7 @@
 
                 contactDiv.appendChild(list);
 
-                cv.href = "https://drive.google.com/file/d/134VjxYA1-ZAn-6TYvi1IPsHHfcPCWv1W/view?usp=sharing";
+                cv.href = "https://drive.google.com/file/d/134VjxYA1-ZAn-6TYvi1IPsHHfcPCWv1W/view?usp=sharing"; 
             }
             else {
                 list.appendChild(createMenuItem("Mississauga, Ontario, Canada"));
