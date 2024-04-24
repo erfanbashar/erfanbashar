@@ -68,25 +68,27 @@
     user-select: none;
     
     .item-in {
-    background: #fff;
-    padding: 30px;
-    position: relative;
-    
-    &:hover:before {
-        width: 100%;
-    }
-    
-    &::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    height: 2px;
-    width: 0%;
-    background: #333333;
-    right: 0px;
-    -webkit-transition: width 0.4s;
-    transition: width 0.4s;
-    }
+        background: #fff;
+        padding: 30px;
+        position: relative;
+
+        font-size: 12px;
+        
+        &:hover:before {
+            width: 100%;
+        }
+        
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            height: 2px;
+            width: 0%;
+            background: #333333;
+            right: 0px;
+            -webkit-transition: width 0.4s;
+            transition: width 0.4s;
+        }
     }
 }
 .item {
@@ -100,6 +102,7 @@
     p {
         font-size: 12px;
     }
+    
     a {
         font-family: 'Montserrat', sans-serif;
         font-size: 12px;
@@ -4500,7 +4503,7 @@ input[type="button"].btn--primary:focus {
 }
 
 .contact-block {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 400;
     line-height: 1.286;
 }
